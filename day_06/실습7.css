@@ -1,0 +1,217 @@
+* {
+
+    margin: 0px;
+    padding: 0px;
+    /* 기본 여백들을 제거*/
+    box-sizing: border-box;
+    /* 구역 사이즈기준을 테두리까지*/
+
+}
+
+a {
+    text-decoration: none;
+    /* 밑줄제거*/
+    color: black;
+    /*글꼴 색상*/
+}
+
+/* ul 또는 ol에서 글머리 제거*/
+li {
+    list-style: none;
+}
+
+#head{
+    display: flex;
+    width: 1280px;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.header-logo{
+    padding-bottom: 39px;
+}
+
+
+
+
+.menu-id{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 13px;
+    
+   
+}
+
+.menu-id > li{
+    margin-top: 5px;
+    margin-bottom: 19px;
+}
+
+
+.menu-menu{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+.menu-menu > li{
+    margin-left: 100px;
+    margin-bottom: 35px;
+}
+
+.main-picture >img {
+    width: 100%;
+}
+
+
+#main{
+    display: flex;
+    width: 1280px;
+    margin: 20px auto;
+    
+}
+.main-left{
+    width: 250px;
+    margin-right: 30px;
+}
+.더_베이킹_부분{
+    margin-bottom: 30px;
+}
+.더_베이킹_부분 > .n1{
+    font-size: 20px;
+    color: white;
+    background-color: #0ca9a2;
+    padding: 10px;
+    font-weight: 600;
+
+}
+.더_베이킹_부분 > .n2{
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.더_베이킹_부분 > .n3 > .n4{
+    border-radius: 8px ;
+    width: 160px;
+    height: 30px;
+    border: solid 1px black;
+}
+.더_베이킹_부분 > .n3 > .n5{
+    
+    width: 45px;
+    height: 30px;
+}
+
+.베이킹_요리_부분{
+    margin-bottom: 30px;
+}
+.베이킹_요리_부분 > .n1{
+    border-top: solid black 2px;
+    border-bottom: solid rgb(223, 219, 219) 2px;
+    padding: 10px;
+    font-size: 19px;
+    font-weight:770;
+}
+
+.베이킹_요리_부분 > .n2{
+    
+    padding: 5px;
+    
+}
+.베이킹_요리_부분 > .n2 > li{
+    margin-bottom: 6px;
+}
+
+.main-center{
+    width: 490px;
+    margin-right: 20px;
+}
+
+.게시물{
+    margin-bottom: 50px;
+}
+
+
+.게시물 > .n1{
+    border-bottom: solid black 2px;
+    padding: 5px 0px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.게시물 > .n2{
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+.게시물 > .n2 > ul, .게시물 > .n2 > div{
+    margin-top: 15px ;
+    
+    
+}
+
+
+.main-right{
+    width: 490px;
+    
+}
+.제빵클래스 > .n1{
+    border-bottom: solid black 2px;
+    padding: 5px 0px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.목차{
+    display: flex;
+    margin-top: 8px ;
+    margin-bottom: 40px;
+    
+}
+.목차 > div{
+    margin-right: 50px;
+}
+
+#footer{
+    width: 100%;
+    background-color: #05344e;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_contents{
+    height: 100%;
+    width: 1280px;
+
+}
+
+.footer_contents > .n1 > ul{
+    display: flex;
+    margin: 15px 0px;
+    
+}
+.footer_contents > .n1 > ul > li >a{
+    margin-right: 40px;
+    color: white;
+}
+
+.footer_contents > .n2{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0px;
+   
+}
+
+.footer_contents > .n2 > div >.n3{
+    font-size: 18px;
+    font-weight: 650;
+    padding-bottom: 3px;
+    color: white;
+}
+.footer_contents > .n2 > div > .n4{
+    padding-bottom: 2px;
+    color: white;
+}

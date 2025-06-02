@@ -1,0 +1,232 @@
+* {   margin: 0px;
+    padding: 0px;
+    /* 기본 여백들을 제거*/
+    box-sizing: border-box;
+    /* 구역 사이즈기준을 테두리까지*/
+    
+    
+}
+
+
+a{ text-decoration: none; /* 밑줄제거*/ color: white; /*글꼴 색상*/ }
+
+li { list-style: none;} /* 번호 제거 */
+
+#header{ /* 1. 헤더부분 */ 
+    display: flex; /* flex */
+    width: 100%; height: 120px; /* 넓이 100% 높이 120px */
+    
+}
+
+#gpt_image{ /* 2. gpt 로고 구역 */
+
+    width: 15%; /*가로 넓이 2*/
+    display: flex; /* flex */
+    align-items: center; /* 세로 중앙 정렬 */
+    background-color: white; /* 배경 색상 */
+    border-right: solid 2px black; /* 우측 경계선 */
+
+}
+
+
+#gpt_image > img{ /* 3. gpt 이미지 */
+    
+    margin: 0 auto; /* 가로 중앙 배열*/
+    width: clamp(50px, 8vw, 100px);  /* 가로 너비 gpt이미지 크기 clamp(글자크기 조절) (최소, 기존값, 최대) */
+    height: auto;  /* 높이를 비율에 맞춰 자동 조정 */
+    
+}
+
+#title{ /* 4. "컴퓨터와 연애하기~ 정독" 구역 */
+    
+    width: 85%; /*가로 넓이 */
+    display: flex; /* flex */
+    align-items: center; /* 세로 중앙 정렬 */
+   
+     
+}
+._title{ /* 5. "컴퓨터와 연애하기~ 정독 글자 */
+    
+    width: 90%; /* 가로 넓이 */
+    margin: 0 auto; /* 가로 중앙 정렬 */
+    text-align: center; /* 세로 중앙 정렬 */
+
+    font-size: clamp(14px, 4vw, 70px); /* 글자크기 clamp(글자크기 조절) (최소, 기존값, 최대) */
+    white-space: nowrap; /* 글자 줄 바꿈 안되게 하기 */
+    font-weight: 600; /* 글자 굵기 */
+    letter-spacing: 3px; /* 자간 늘리기 */
+    color: #475570; /* 글자 색상 */
+    
+    
+    
+}
+
+#main{ /* 6. 메인영역 */
+    display: flex; /* flex */
+}
+
+#left-side{ /* 7. 페이지 이동 구역 */
+    width: 15%; /*가로 넓이 */
+    height: 840px; /* 새로 넓이 */
+    background-color:#d9d9d9; /* 배경 색상 */
+    border-right: solid 2px black; /* 우측 경계선 */
+    
+    
+}
+.button{ /* 8. 누르는 버튼 */
+    background-color: #bba6e4; /* 배경 색상 */
+    
+    width: 70%; /*가로 넓이 */
+    margin: 20px auto; /* 가로 중앙 정렬 */
+    height: 10%; /* 새로 넓이 */
+    border-radius: 30px; /* 둥근 모서리 */
+    
+    display: flex; /* flex */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    color: #d9d9d9; /* 글자 색상 */
+    font-size: clamp(5px, 2vw, 21px); /* 글자 크기 clamp(최솟값, 기존값 최대) */
+    white-space: wrap; /* 글자 줄 바꿈 표시 */
+    text-align: center; /* 줄 바꼈을 때 글자 센터로 가게하기*/
+    
+
+}     
+.button-1{ /* 8-1. 누르는 버튼 */
+    background-color: #5e17eb; /* 배경 색상 */
+    
+    width: 70%; /*가로 넓이 */
+    margin: 20px auto; /* 가로 중앙 정렬 */
+    height: 10%; /* 새로 넓이 */
+    border-radius: 30px; /* 둥근 모서리 */
+    
+    display: flex; /* flex */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    color: #d9d9d9; /* 글자 색상 */
+    font-size: clamp(5px, 2vw, 21px); /* 글자 크기 clamp(최솟값, 기존값 최대) */
+    white-space: nowrap; /* 글자 줄 바꿈 안되게 하기 */
+    overflow: hidden; /* 넘치는 글자 숨김 */
+    
+}    
+
+
+#right-side{ /*9. 주제제목 및 내용물 있는 곳 */
+    width: 85%; /*가로 넓이 */
+}
+
+.half-title{ /* 10. 소제목 구간 */
+    width: 100%; /*가로 넓이 */
+    height: 135px; /* 새로 넓이 */
+    background-color:#d9d9d9; /* 배경 색상 */
+    display: flex; /* flex */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    border-bottom: solid 2px black; /* 아래 모서리 줄 추가 */
+}
+
+.text1{ /* 11. 소제목 글씨 구역 */
+    width: 90%; /*가로 넓이 */
+    height: 80px; /* 새로 넓이 */
+    border-radius: 100px;
+    border: none; /* 모서리 없앰 */
+    text-align: center; /* 새로 중앙 정렬 */
+    font-size: clamp(20px , 3vw , 30px); /* 글자 크기 clamp(최솟값, 기존값 최대) */
+    letter-spacing: 5px; /* 자간 늘리기 */
+    color: rgb(182, 181, 181); /* 글자 색상 */
+    
+}
+
+.text1::placeholder {   /* placeholder 색상 */
+    color: #d9d9d9; 
+}
+
+
+
+.contents{ /* 12. 내용 부분 */
+    width: 100%; height: 705px; /*가로 넓이 */ /* 새로 넓이 */ 
+    background-color: #d9d9d9; /* 배경 색상 */
+    display: flex; /* flex */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+.contents-contents{ /* 13. 내용 부분 글씨구역 */
+    width: 95%; /*가로 넓이 */
+    background-color: white; /* 배경 색상 */
+    height: 90%; /* 새로 넓이 */
+    border-radius: 50px; /* 둥근 모서리 */
+}
+
+.morce-code-eng{
+    width: 100%;
+    height: 9%;
+    display: flex;
+    align-items: flex-end;
+}
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.morce-code-eng > div{
+    font-size: 22px;
+    font-family: 'NanumSquareRound';
+    margin-left: 10px;
+    font-size: clamp(13px, 2vw, 22px); /* 글자크기 clamp(글자크기 조절) (최소, 기존값, 최대) */
+    white-space: nowrap; /* 글자 줄 바꿈 안되게 하기 */
+}
+
+.morce-code-kor{
+    width: 100%;
+    height: 14%;
+    display: flex;
+    align-items: center;
+    border-bottom: solid #d9d9d9 2px;
+    
+}
+
+.morce-code-kor > div{
+    font-size: 50px;
+    font-family: 'NanumSquareRound';
+    color: #5e17eb;
+    margin-left: 10px;
+    margin-top: 3px;
+    font-size: clamp(14px, 4vw, 50px); /* 글자크기 clamp(글자크기 조절) (최소, 기존값, 최대) */
+    white-space: nowrap; /* 글자 줄 바꿈 안되게 하기 */
+}
+
+.morce-code-main{
+    width: 100%;
+    height: 77%;
+    display: flex;
+}
+
+.morce-code-main-text{
+    width: 70%;
+}
+
+.morce-code-main-text > div{
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 2px; 
+    font-family: 'NanumSquareRound';
+    margin-left: 8px;
+    margin-bottom: 65px;
+    margin-top: 13px;
+    font-size: clamp(13px, 2vw, 21px); /* 글자크기 clamp(글자크기 조절) (최소, 기존값, 최대) */
+    /* 글자 줄 바꿈 안되게 하기 */
+}
+
+.morce-code-main-img{
+    width: 30%;
+  
+}
+
+.morce-code-main-img > img{
+    
+    height: 250px;
+
+    width: clamp(100px, 23vw, 500px);  /* 가로 너비 gpt이미지 크기 clamp(글자크기 조절) (최소, 기존값, 최대) */
+}

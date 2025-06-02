@@ -1,0 +1,46 @@
+.box {
+    border: 1px solid red;
+    width: 100px;
+}
+
+.flexbox1 {
+    display: flex;
+    border: blue 1px solid;
+    width: 250px;
+    flex-wrap: nowrap;
+    /*
+   nowrap : 만약 하위요소들이 부모 요소의 크기보다 커지면 하위요소 자동크기 조절
+
+   */
+}
+
+.flexbox2 {
+    display: flex;
+    border: blue 1px solid;
+    width: 250px;
+    flex-wrap: wrap;
+    /*
+   nowrap : 만약 하위요소들이 부모 요소의 크기보다 커지면 자동 줄바꿈
+   */
+}
+
+.flexbox3 {
+    display: flex;
+    border: blue 1px solid;
+    width: 250px;
+    flex-wrap: wrap-reverse; /* 뒤집어서 나옴 */
+}
+
+.flexbox4 {
+    display: flex;
+    border: blue 1px solid;
+    width: 250px;
+    flex-direction: row; /* 가로 방향 배치 (기본값) */
+}
+
+.flexbox5{
+    display: flex;
+    border: blue 1px solid;
+    width: 250px;
+    flex-direction: column /* 세로 방향 배치 */
+}

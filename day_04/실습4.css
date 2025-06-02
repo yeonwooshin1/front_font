@@ -1,0 +1,27 @@
+
+.sec1{
+    
+    width: 370px;
+    border-top: solid 1px rgb(173, 172, 172);
+    border-right:  solid 1px rgb(173, 172, 172);
+    border-left: solid 1px rgb(173, 172, 172);  
+}
+
+img{
+    width: 370px;  
+}
+
+
+.sec2{
+    border: solid 1px rgb(173, 172, 172);
+    
+    width: 350px;
+
+    padding: 10px;
+}
+
+
+.or{
+    font-weight: 650;
+    color: orange;
+}

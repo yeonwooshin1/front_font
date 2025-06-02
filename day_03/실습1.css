@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'SF_HambakSnow';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.문단1{
+    color: black;
+    font-size: 60px; 
+    font-family: "궁서";
+    font-style: italic;
+    font-weight: 900;
+}
+.문단2{
+    color: blue;
+    font-size: 20px;
+    word-spacing: 10px;
+    font-family :'SF_HambakSnow';
+    letter-spacing: 10px; 
+    line-height: 150%; 
+    
+    
+}
+.문단3{
+    color: red;
+    text-decoration: underline overline line-through; 
+    text-align: center;
+    text-shadow: 1px 1px 5px #BFBFBF;
+}
+.문단4{
+    color: red;
+    text-decoration: underline overline line-through; 
+    text-align: center;
+    font-size: 35px;
+    text-shadow: 2px 2px 3px #BFBFBF;
+    font-weight: 600;
+}

@@ -1,0 +1,137 @@
+/* **************공통 css 부문 **************** */
+* {
+
+    margin: 0px;
+    padding: 0px;
+    /* 기본 여백들을 제거*/
+    box-sizing: border-box;
+    /* 구역 사이즈기준을 테두리까지*/
+
+}
+
+a {
+    text-decoration: none;
+    /* 밑줄제거*/
+    color: black;
+    /*글꼴 색상*/
+}
+
+/* ul 또는 ol에서 글머리 제거*/
+li {
+    list-style: none;
+}
+
+#header {
+    display: flex;
+    /*하위요소 가로 배치*/
+    justify-content: space-between;
+    /* 하위요소 양쪽 끝 균등분배 */
+    align-items: center;
+    /*새로 정렬 */
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.top-menu {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0px;
+    font-size: 15px;
+
+}
+
+.top-menu>li {
+    margin-left: 10px;
+}
+
+.main-menu {
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-menu>li {
+    margin-left: 40px;
+}
+
+/*************** 대표 이미지 CSS 부문 ***********************/
+.아무거나>img {
+    width: 100%;
+    /**/
+
+}
+
+#main {
+    display: flex;
+    align-items: flex-start;
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.side-bar>h3 {
+    background-color: rgb(145, 143, 143);
+    width: 250px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 21px;
+    margin-right: 30px;
+}
+
+.내용>p {
+    margin-top: 15px;
+}
+
+.목록>li {
+    border-bottom: rgb(194, 193, 193) 1px solid;
+    width: 250px;
+    padding: 5px;
+    margin: 7px 0px;
+    margin-right: 30px;
+
+}
+
+.내용>h3 {
+    margin-top: 21px;
+    border-bottom: rgb(194, 193, 193) 1px solid;
+    padding-bottom: 15px;
+
+}
+
+.내용 {
+    margin-bottom: 22px;
+}
+
+.내용>img {
+    width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+#footer {
+    background-color: #2c2c2a;
+    
+
+}
+
+#right-side > p {
+    color: white;
+    font-size: 13px;
+
+}
+
+.footerer>img {
+    margin-bottom: 8px;
+
+}
+
+.footerer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    width: 1280px;
+    margin: 0 auto;
+
+}

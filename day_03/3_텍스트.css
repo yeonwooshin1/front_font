@@ -1,0 +1,47 @@
+/* 누구를{ 무엇을 : 어떻게; } */
+/* 웹폰트 : 폰트 저작권 주의 :
+    무료 한글 폰트 : https://noonnu.cc/ 에서 웹폰트 코드 복사
+    무료 영문 폰트 : https://fonts.google.com/ 
+    */
+
+    @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+.title{
+    font-family: "궁서";    /* 글꼴/폰트 현재 PC에 설치된 글꼴 가능*/ 
+    font-size: 30px;        /* 글자크기 , px(픽셀) */
+    font-style: italic;     /* 글꼴 기울기 */
+    font-weight: bold;      /* 글꼴 진하게 head마크업은 기본값 */
+
+
+}
+
+.content{
+    font-family: 'SBAggroB';      /* 글꼴 */
+    color: wheat;               /* 글꼴 색상 */
+    word-spacing: 10px;           /*단어 간격 : 어간 */
+    letter-spacing: 10px;         /*글자 간격 : 자간 */
+    line-height: 150%;            /*줄 간격 , % , 보통 150~160 씀 */
+
+}
+.writter{
+    text-align: center;            /* 텍스트 가로 정렬 : left, right, center */
+    /* 텍스트 선 긋기 underline(밑줄) , overline(윗줄) , line-through(취소선) */
+    text-decoration: underline overline line-through; 
+
+    /* 텍스트 그림자 : x축 , y축(+ : 아래로 , - : 위로) , 흐림 정도 색상 */
+    text-shadow: 10px 10px 30px blue; 
+
+    /* 색상 3가지 ( 1.색상명 2.RGB 3.헥스코드 )*/
+    color: green;           /* 색상명 */
+    color: rgb(0, 255, 0);  /* RGB */
+    color: #987933;         /* 헥스코드 ( 어도비 https://color.adobe.com/ko/ ) */
+
+}

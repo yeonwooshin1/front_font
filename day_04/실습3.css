@@ -1,0 +1,39 @@
+.title{
+    width: 350px;
+    height: 350px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgb(247, 207, 214);
+    border-radius: 10px ;
+    
+}
+
+h2{
+
+    padding: 40px 0px  0px 0px;
+}
+
+.id , .ps {
+    border-radius: 10px ;
+    border: solid 1px black;
+    padding: 13px;
+    margin: 6px;
+    width: 220px;
+}
+.login{
+    background-color: blue;
+    color: white;
+    border-radius: 11px ;
+    padding: 10px;
+    margin: 7px;
+    width: 80px;
+}
+
+p{
+    font-size: 16px;
+    font-weight: 450;
+    
+}
+a{
+    text-decoration : none;
+}
