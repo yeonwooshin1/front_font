@@ -67,7 +67,7 @@ li { list-style: none;} /* 번호 제거 */
 
 #left-side{ /* 7. 페이지 이동 구역 */
     width: 15%; /*가로 넓이 */
-    height: 830px; /* 새로 넓이 */
+    height: 840px; /* 새로 넓이 */
     background-color:#d9d9d9; /* 배경 색상 */
     border-right: solid 2px black; /* 우측 경계선 */
     
@@ -91,8 +91,10 @@ li { list-style: none;} /* 번호 제거 */
     
 
 }     
-.button1{ /* 8-1. 누르는 버튼 */
-    background-color: #5e17eb; /* 배경 색상 */
+
+.button3{ /* 8. 누르는 버튼 */
+    background-color: #5217eb; /* 배경 색상 */
+    
     width: 70%; /*가로 넓이 */
     margin: 20px auto; /* 가로 중앙 정렬 */
     height: 10%; /* 새로 넓이 */
@@ -103,9 +105,12 @@ li { list-style: none;} /* 번호 제거 */
     justify-content: center; /* 가로 중앙 정렬 */
     color: #d9d9d9; /* 글자 색상 */
     font-size: clamp(5px, 2vw, 21px); /* 글자 크기 clamp(최솟값, 기존값 최대) */
-    white-space: nowrap; /* 글자 줄 바꿈 안되게 하기 */
-    overflow: hidden; /* 넘치는 글자 숨김 */    
-}    
+    white-space: wrap; /* 글자 줄 바꿈 표시 */
+    text-align: center; /* 줄 바꼈을 때 글자 센터로 가게하기*/
+    
+
+} 
+
 
 
 #right-side{ /*9. 주제제목 및 내용물 있는 곳 */
@@ -114,7 +119,7 @@ li { list-style: none;} /* 번호 제거 */
 
 .half-title{ /* 10. 소제목 구간 */
     width: 100%; /*가로 넓이 */
-    height: 130px; /* 새로 넓이 */
+    height: 135px; /* 새로 넓이 */
     background-color:#d9d9d9; /* 배경 색상 */
     display: flex; /* flex */
     justify-content: center; /* 가로 중앙 정렬 */
@@ -139,8 +144,9 @@ li { list-style: none;} /* 번호 제거 */
 }
 
 
+
 .contents{ /* 12. 내용 부분 */
-    width: 100%; height: 700px; /*가로 넓이 */ /* 새로 넓이 */
+    width: 100%; height: 705px; /*가로 넓이 */ /* 새로 넓이 */ 
     background-color: #d9d9d9; /* 배경 색상 */
     display: flex; /* flex */
     justify-content: center; /* 가로 중앙 정렬 */
@@ -148,5 +154,15 @@ li { list-style: none;} /* 번호 제거 */
 }
 
 
-
-
+.contents-contents{ /* 13. 내용 부분 글씨구역 */
+    width: 95%; /*가로 넓이 */
+    background-color: white; /* 배경 색상 */
+    height: 90%; /* 새로 넓이 */
+    border-radius: 50px; /* 둥근 모서리 */
+    display: flex; /* flex */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    color: black; /* 글자 색상 */
+    font-size: 30px; /* 글자 크기 */
+    letter-spacing: 5px; /* 자간 늘리기 */
+}
