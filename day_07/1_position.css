@@ -1,0 +1,70 @@
+
+
+
+
+
+.box{
+    width: 100px; height: 100px;
+    background-color:  yellow;
+    border: 1px solid red;
+
+}
+
+.box2{
+    background-color: red;
+    position: relative; 
+    /* position : relative (상대적인) 
+        : 본래 지정된 구역에 위치부터 시작 */
+    top: 50px; /* 기존 위치에서부터 윗변 기준으로 50px 아래로 이동 */
+    left: 50px; /* 기존 위치에서부터 왼쪽변 기준으로 50px 오른쪽 이동 */
+}
+
+.box3{
+    background-color: green;
+    position: absolute ; 
+    /* position : absolute (절대적인)
+        : 부모(상위) 요소의 위치부터 시작점 
+    */
+    top: 50px;
+    left: 50px;
+}
+
+.box4{
+    background-color: blue;
+    position: static;
+    /* position: static (정적인/기본값)
+        :코드작성순으로 배치, 
+        위치(right/top/bottom/left 등)(속성) 사용불가능
+    */
+    top: 50px; /* 안된다 */
+    left: 50px; /* 안된다 */
+}
+
+.box5{
+    background-color: brown;
+    position: fixed;
+    /* position : fixed (고정된)
+        : 디바이스(화면)으 위치 고정
+    
+    */
+    bottom: 50px; /* 화면에서부터 아랫변 기준으로 100px 위로 이동*/
+    right: 100px;
+}
+
+.parent{
+    background-color: orange;
+    padding: 10px;
+    position: relative;
+    /* absolute 속성값 사용시 주의할 점: 부모가
+    position : relative; 를 써야지 따라감 
+    기본값 : body에 relative이기 때문에 상위(parent) 요소에 
+    relative를 주지 않으면 상위 상위요소인 body 기준으로 된다. */
+}
+
+
+
+.box6{ /* box6 요소의 상위요소는 parent */
+    background-color: violet;
+    position: absolute;
+    top: 100px; right: 100px; 
+}
