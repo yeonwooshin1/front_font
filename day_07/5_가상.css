@@ -54,4 +54,5 @@ li {list-style-type: none; }
 
 }
 /* 만약에 메뉴 구역을 hover 했을 때 서브메뉴 열기 */
-#header2 > ul:hover .subMenu2{  display: block;}
+#header2 > ul:hover .subMenu2{ display: block;}
+/* ul:hover .subMenu2 -> 부모클래스에서 자식 클래스를 할 때 가능한 것 */

@@ -1,0 +1,116 @@
+
+* { margin: 0px;
+padding: 0px;
+    /* 기본 여백들을 제거*/
+box-sizing: border-box;
+    /* 구역 사이즈기준을 테두리까지*/
+font-size: 12px;
+
+}
+
+a {
+    text-decoration: none;
+    /* 밑줄제거*/
+    color: black;
+    /*글꼴 색상*/
+}
+
+li{ list-style-type: none;}
+
+.header{
+    width: 100%;
+    display: contents;
+}
+
+#content{
+    width: 1600px; margin: 0 auto;
+}
+
+#footer{
+    width: 100%;
+}
+
+
+.top-menu{
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px;
+}
+
+.top-menu-img {margin: 0px 20px 0px 0px;}
+
+
+.top-menu-menu a::after {
+    content: "|";
+    width: 30px; background-color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+.main-menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 40px;
+    align-items: center;
+    
+}
+
+.main-menu> ul{
+    display: flex;
+    width: 80%;
+}
+.main-menu > ul > li {
+    padding: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px; width: 80px;
+}
+.main-menu > ul > li > a > span{ color: red;}
+
+
+.main-menu .subMenu{
+   
+    position: absolute;
+    top: 80px; 
+    text-align: center;
+    margin: 0 auto;
+    background-color: white;
+    width: 130%;
+    display: none;
+    /* 화면에 표시하지 않는다 */
+}
+
+.main-menu .subMenu >li{
+    margin: 10px;
+}
+.main-menu li:hover > .subMenu{
+    display: block;
+}
+.search-box{
+    border-bottom: solid black 1px;
+    display: flex;
+}
+.search-box > img{
+    width: 15px;
+    margin-bottom: 5px;
+    
+}
+.search-box > input{
+    border: none;
+    width: 130px;
+    padding: 5px;
+    background-color: rgba(255,255,255,0);
+    color: rgb(51, 51, 51);
+    margin-right: 5px;
+}
+*:focus{ outline: none;}
+.imgimg{ width: 155px;}
+.main-menu{
+    position: sticky ;
+    top: 0px; /* 고정 위치 */
+    background-color: rgba( 255, 255, 255, 0.8 );
+}
+

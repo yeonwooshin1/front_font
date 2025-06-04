@@ -10,7 +10,7 @@
 a{ text-decoration: none; color: black; }
 
 /* 1.만약에 해당 선택자를 hover 했을 때 */
-a:hover{
+a:hover {
     color: red;
     text-decoration: underline; /* 밑줄 */
 }
