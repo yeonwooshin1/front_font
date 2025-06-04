@@ -1,0 +1,42 @@
+#redbox{
+    width: 700px; height: 450px;
+    margin: 0 auto;
+    background-color: rgb(253, 124, 124);
+    position: relative;
+}
+.html , .python, .react , .spring , .js , .java{
+    width: 80px; height: 60px;
+    background-color: rgb(255, 255, 128);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.html{
+    position: absolute;
+    top: 70px; right: 310px;
+    
+}
+.python{
+    position: absolute;
+    top: 130px; right: 180px;
+}
+.react{
+    position: absolute;
+    bottom: 130px; right: 180px;
+}
+.spring{
+    position: absolute;
+    bottom: 70px; right: 310px;
+}
+.js{
+    position: absolute;
+    bottom: 130px; left: 180px;
+}
+.java{
+    position: absolute;
+    top: 130px; left: 180px;
+}
