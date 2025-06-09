@@ -576,7 +576,7 @@ h2 {
 
 .k2-2 {
     margin: 13px 0 0;
-    font-family: "폰트M";
+    font-family: '폰트M';
     font-size: 16px;
     line-height: 30px;
     letter-spacing: -.4px;
@@ -599,23 +599,164 @@ h2 {
 
 }
 
+.j1{
+    display: flex;
+    justify-content: flex-end;
+}
 
 
 
 
 
+.j2{
+    display: flex;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.j1-1{
+    position: relative;
+    margin: 0 0 0 32px;
+    font-size: 0;
+}
+
+.j1-2{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 9px 0 10px 20px;
+    background: rgba(0, 0, 0, .5);
+    font-family: '현대B';
+    font-size: 18px;
+    letter-spacing: -.24px;
+    color: #fff;
+    line-height: 30px;
+    text-align: left;
+}
+
+.j2-1{
+    position: relative;
+    padding: 40px 30px 0;
+    min-width: 224px;
+    background: #f6f3f2;
+}
+
+.j2-2{
+    font-family: '현대B';
+    font-size: 24px;
+    letter-spacing: -.24px;
+    color: #000;
+    line-height: 26px
+}
+.j2-3{
+    margin-top: 14px;
+    font-family: '현대L';
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -.4px;
+    color: #666;
+}
+
+.j2-4{
+    position: absolute;
+    top: 164px;
+    display: block;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background-color: transparent;
+    font-family: '현대B';
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -.4px;
+    color: #002c5f;
+}
+.j2-4 img{
+    width: 13px;
+    height: 13px;
+    vertical-align: middle; 
+    margin-left: 6px;
+}
 
 
 
+.j2-5{
+    display: flex;
+}
 
+.j2-6-1{
+    position: absolute;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    background: #007fa8;
+    font-family: "현대B";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: -.4px;
+    color: #fff;
+    text-align: center;
+}
+.j2-6{
+    width: 25%;
+    margin-left: 32px;
+    position: relative
+}
+.j2-6 > img{
+    border: 1px solid #e5e5e5;
+}
+.j2-7{
+    margin: 15px 0 0;
+    font-family: '현대L';
+    font-size: 16px;
+    letter-spacing: -.43px;
+    color: #000;
+    line-height: 26px;
+    
+}
+.j2-8{
+    display: flex;
+    margin: 4px 0 0;
+    font-family: '폰트M';
+    font-size: 16px;
+    letter-spacing: -.24px;
+    color: #000;
+    line-height: 26px;
+}
+.j2-8 > span{
+    margin: 0 5px;
+    font-family: '현대B';
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -.24px;
+}
 
+.j2-9{
+    display: flex; 
+    margin: 4px 0 0;
+    font-family: '폰트M';
+    align-items: flex-end;
+}
+.j2-10{
+    color: #e63312;
+    font-family: '현대B';
+    font-size: 16px;
+    letter-spacing: -.24px;
+    line-height: 26px;
+}
 
-
-
-
-
-
-
+.g1{
+    width: 100%;
+    height: 100%;
+}   
+.g2{
+    gap: 2.86%;
+    max-width: 1120px;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
 
 
 
@@ -699,7 +840,7 @@ h2 {
     line-height: 1;
     width: 145px;
     display: block;
-    font-family: "폰트m";
+    font-family: '폰트m';
 }
 
 .main-toggle-main img {
