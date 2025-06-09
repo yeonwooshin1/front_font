@@ -1,0 +1,744 @@
+* {
+
+    margin: 0px;
+    padding: 0px;
+    /* 기본 여백들을 제거*/
+    box-sizing: border-box;
+    /* 구역 사이즈기준을 테두리까지*/
+}
+
+@font-face{
+    font-family: '폰트L';
+    src: url(./폰트L.ttf)
+}
+@font-face{
+    font-family: '폰트M';
+    src: url(폰트M.ttf)
+}
+@font-face{
+    font-family: '폰트B';
+    src: url(현대b.ttf)
+}
+@font-face {
+    font-family: '현대B';
+    src: url(현대.ttf)
+}
+@font-face {
+    font-family: '현대L';
+    src: url(현대L.ttf)
+}
+
+a {
+    text-decoration: none;
+    /* 밑줄제거*/
+    color: black;
+    /*글꼴 색상*/
+}
+
+/* ul 또는 ol에서 글머리 제거*/
+li {
+    list-style: none;
+}
+
+
+#wrap {
+    
+}
+
+
+#header {
+    width: 100%;
+    height: 700px; /*임시*/
+}
+
+.n1 {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+
+.header-top {
+  position: absolute;
+  top: 0;            /* n2 컨테이너 상단에 붙이려면 0 */
+  left: 50%;         /* 중앙 정렬을 위해 */
+  transform: translateX(-50%);
+  width: 1280px;     /* 기존 너비 유지 */
+  z-index: 10;       /* 이미지보다 위에 뜨도록 */
+  background: transparent; /* 배경 없애기 */
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.header-top>img {
+    width: 200px;
+    height: 50px;
+}
+
+.header-top-menu {
+    display: flex;
+
+}
+
+.header-top-util {
+    display: flex;
+}
+
+
+.n2 {
+    width: 1300px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.n2>img {
+    width: 1500px;
+    display: block;
+}
+
+#main{
+    height: 2200px;
+    width: 100%;
+   
+}
+.model, .electronic-car{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 140px;
+    
+}
+h2{
+    font-family: '현대B';
+    text-align: center;
+    width: 100%;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -.4px;
+}
+.mini-title{
+    margin: 30px 0 0;
+    font-family: '현대L';
+    font-size: 16px;
+    letter-spacing: -.24px;
+    color: #666;
+    line-height: 34px;
+    text-align: center;
+}
+
+.n0{
+    display: flex;
+    width: 1120px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.n0 > div{
+    width: 100%;
+}
+.n0 > .n1::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    content: "1위";
+    width: 60px;
+    height: 60px;
+    background: #007fa8;
+    font-family: '현대B';
+    font-size: 20px;
+    letter-spacing: -.24px;
+    text-align: center;
+    color: #fff;
+    line-height: 60px;
+}
+.n0 > .n1 img{
+    width: 576px;
+    margin-right: 60px;
+}
+
+.model > .n0 > div > .n2{
+    display: flex;
+    font-size: 16px;
+    letter-spacing: -.24px;
+    color: #666;
+    line-height: 30px;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    margin-bottom: 30px;
+    list-style: none;
+    font-family: '폰트L';
+    
+}
+.model > .n0 > div > .n2 >  li > span:hover .n0{ 
+    display: none;
+  
+}
+.model > .n0 > div > .n2 li{
+    position: relative;
+}
+.model > .n0 > div > .n2 > li:not(:first-child)::before{
+    
+    position: absolute;
+    left: 0;
+    top: 8px;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 14px;
+    background: #999;
+}
+.model > .n0 > div > .n2 li:not(:first-child) span {
+  padding-left: 15px;
+}
+#nn1{
+    color: #007fa8;
+}
+.model > .n0 > div > .n3{
+    font-size: 37px;
+    line-height: 40px;
+    letter-spacing: -.24px;
+    color: #000;
+    font-family: '현대B';
+    margin-bottom: 110px;
+}
+.model > .n0 > div > .n4{
+    display: flex;
+    font-size: 17px;
+    letter-spacing: -.24px;
+    color: #000;
+    line-height: 30px;
+}
+
+.model .n4 > div{
+    font-family: '현대B';
+    margin-right: 32px;
+}
+
+.model > .n0 > div > .n4 > div > a > img{
+    width: 224px;
+    height: 168px;
+    margin-bottom: 10px;
+}
+
+
+.m1{
+    display: flex;
+    gap: 32px;
+
+}
+
+.m2-1{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 384px);
+}
+
+.m3-1{
+    width: 100%;
+    position: relative;
+}
+.m3-1 > img{
+    width: 100%; height: 100%;
+}
+.m3-1 > div{
+    position: absolute;
+    top: 34px;
+    left: 40px;
+    text-align: left;
+}
+.m4-1{
+    font-family: '현대B';
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: -.4px;
+    color: #fff;
+}
+.m4-2{
+    margin-top: 5px;
+    font-family: '현대L';
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -.4px;
+    color: #fff;
+}
+.m4-3{
+    margin-top: 13px;
+    
+}
+.m4-3 > a{
+    font-family: '현대L';
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -.4px;
+    color: #fff;
+}
+.m4-3 > a:after , .m5-4 > a:after , .m5-4-1 > a::after{
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(-45deg);
+    margin-left: 6px;
+}
+.m3-2{
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    position: relative;
+    padding: 35px 40px 37px;
+    background: #f6f3f2;
+    text-align: left;
+}
+.m3-2::after{
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 180px;
+    height: 91px;
+    background: url(main_hi_ev_icon.png) no-repeat 0 0;
+    background-size: 180px auto;
+    content: "";
+}
+
+.m5-1{
+    font-family: '현대B';
+    font-size: 24px;
+    letter-spacing: -.24px;
+    color: #000;
+    line-height: 34px;
+    
+}
+.m5-2{
+    margin-top: 6px;
+    font-family: '현대L';
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -.4px;
+    color: #666;
+}
+
+.m5-3{
+    display: flex;
+    position: relative;
+    margin-top: 34px;
+
+}
+.m5-4, .m5-4-1{
+    font-family: '현대B';
+    font-size: 16px;
+    letter-spacing: -.4px;
+}
+.m3-2 a{
+   color:#002c5f;
+}
+.m5-4-1{
+    margin-left: 20px; padding-left: 20px;
+}
+.m5-4-1::after{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 1px;
+    height: 50%;
+    background: #999;
+    transform: translateY(-50%);
+    content: "";
+    margin: 0 20px;
+}
+.m2-2{
+    background-color: #f5f5f5;
+    position: relative;
+}
+.m2-2> .m6-0{
+    padding: 40px 30px 0;
+}
+
+.m2-2 .m6-1{
+    text-overflow: ellipsis;
+    height: 37px;
+    font-size: 30px;
+    font-family: "현대B";
+    line-height: 37px;
+    text-align: center;
+}
+.m2-2 .m6-2 {
+    margin-top: 10px;
+}
+.m2-2 .m6-2 > img{
+    width: 292px;
+}
+.m6-3{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.m6-4{
+    width: 40%;
+    font-size: 16px;
+    font-family: "현대B";
+    line-height: 22px;
+}
+.m6-5{
+    font-size: 16px;
+    line-height: 22px;
+    text-align: right;
+    color: #666;
+    font-family: '폰트L';
+}
+
+.m6-7{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+.m6-7 > button{
+    width: 180px;
+    height: 50px;
+    border: 0;
+    background: #002c5f;
+    color: #fff;
+    cursor: pointer;
+    font-family: '현대B';
+    font-size: 16px;
+    letter-spacing: -.4px;
+}
+
+.m6-8{
+    position: absolute;  
+    bottom: 10px;
+    left: 98px;
+    width: 100%;
+    height: 40px;
+
+}
+.m6-10{
+    display: flex;
+}
+.m6-9, .m6-9-1{
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, .1);
+    color: transparent;
+    opacity: 1;
+    font-size: 0;
+    overflow: hidden; 
+    margin-right: 12px;
+}
+.m6-9-1{
+    background-color: #007fa8;
+}
+
+.m6-11{
+    width: 44px;
+    height: 44px;
+    border-radius: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    background-color: rgba(31, 45, 61, .4);
+    position: absolute;
+    top: 255px;
+    left: 0;
+}
+.m6-12{
+    width: 44px;
+    height: 44px;
+    border-radius: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    background-color: rgba(31, 45, 61, .4);
+    position: absolute;
+    top: 255px;
+    right: 0;
+}
+.m6-11 > span{
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-style: solid;
+    border-width: 2px 0 0 2px;
+    transform: rotate(-45deg);
+    margin-left : 18px;
+    margin-top: 17px;
+    color: #fff;
+}
+.m6-12 > span{
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(-45deg);
+    margin-left : 15px;
+    margin-top: 17px;
+    color: #fff;
+}
+
+
+#main-toggle{
+    
+    background-color: #f6f3f2;
+    width: 100%;
+}
+
+.toggle-x{
+    max-width: 1120px;
+    background-color: #f6f3f2; /*임시용 지워야함*/
+    margin: 0 auto;
+    
+    display: flex;
+    align-items: flex-end;
+}
+.main-toggle-main{
+    width: 100%;
+    
+    background-color: #fff;
+    border: 1px solid #e4dcd3;
+    border-radius: 20px 20px 0 0;
+  /* => 좌상단 8px, 우상단 8px, 우하단 0, 좌하단 0 */
+    margin-top: 3%;
+}
+
+.main-toggle-main > .n1{
+    padding: 24px 50px 21px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -.4px;
+    font-family: "폰트M";
+}
+
+.main-toggle-main > .n2{
+    display: flex;
+    width: 100%;
+    height: 80%;
+    margin: 5px 0 0;
+    padding: 0 15px 30px
+}
+
+.main-toggle-main > .n2 > .n3{
+    width: 33.333%;
+    padding: 0 35px;
+    border-right: 1px solid #e5e5e5;
+}
+
+.main-toggle-main > .n2 > .n3 > .n4{
+    margin-bottom: 12px;
+    font-size: 16px;
+    letter-spacing: -.4px;
+    line-height: 1;
+    color: #002c5f ;
+    font-family: '현대M';
+}
+
+.main-toggle-main > .n2 > .n3 > .n5{
+    
+    display: flex;
+    flex-wrap: wrap;
+   
+    
+}
+.main-toggle-main > .n2 > .n3 > .n5 > div >a{
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: -.4px;
+    line-height: 1;
+    width: 145px;
+    display: block;
+    font-family: "폰트m";
+}
+
+.main-toggle-main img{
+    width: 11px; height: 11px;
+    margin-left: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#footer{
+    width: 100%;
+    background-color: #1c1b1b;
+    
+}
+.footer-x{
+    width: 1120px;
+    margin: 0 auto;
+}
+.footer-top{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+    width: 100%;
+    color: white;
+
+}
+
+.menu{
+    margin-right: 300px;
+}
+
+.menu1{
+    display: flex;
+    font-family: "폰트L";
+}
+
+.menu2{
+    display: flex;
+    font-family: "폰트L";
+}
+.menu1 > div {
+  display: inline-block;
+  position: relative;    /* ::after 의 절대 위치 기준 */
+  padding: 0 12px;       /* 좌우 여백: 선과 텍스트 간 거리 */
+  color: #999;           /* 텍스트 색상 */
+  font-size: 14px;
+}
+
+.menu1 > div:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;              /* 세로 중앙 정렬 */
+  right: 0;              /* 항목 오른쪽 끝 */
+  transform: translateY(-50%);
+  width: 1px;            /* 선 두께 */
+  height: 16px;          /* 선 길이 */
+  background-color: #999;/* 선 색상 (#fff, #ccc 등 원하는 색으로) */
+}
+
+#menu1-1{
+    color: #fff;
+    
+}
+
+.menu2 > div {
+  display: inline-block;
+  position: relative;    /* ::after 의 절대 위치 기준 */
+  padding: 0 12px;       /* 좌우 여백: 선과 텍스트 간 거리 */
+  color: #999;           /* 텍스트 색상 */
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.menu2 > div:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50% ;              /* 세로 중앙 정렬 */
+  right: 0;              /* 항목 오른쪽 끝 */
+  transform: translateY(-50%);
+  width: 1px;            /* 선 두께 */
+  height: 16px;          /* 선 길이 */
+  background-color: #999;/* 선 색상 (#fff, #ccc 등 원하는 색으로) */
+}
+.menu3{
+    color: #999;           /* 텍스트 색상 */
+    font-size: 14px;
+    padding-left: 12px;
+    margin-bottom: 10px;
+    font-family: "폰트L";
+}
+.menu4{
+    color: #999;           /* 텍스트 색상 */
+    font-size: 12px;
+    padding-left: 12px;
+    margin-bottom: 10px;
+    font-family: "폰트L";
+}
+.site > div > a > img{
+    width: 30px; height: 31px;
+}
+.site > div{ 
+    display: flex;
+    justify-content: space-around;    
+    margin-bottom: 12px; 
+}
+.site > div > button{
+  position: relative;           /* ::after 위치 기준 */
+  display: inline-block;
+  width: 189px;
+  height: 30px;
+  padding: 0 24px 0 13px;       /* 오른쪽에 화살표 들어갈 공간 확보 */
+  border: 1px solid #676767;
+  background-color: #1c1b1b;
+  color: #999;
+  text-align: left;
+  cursor: pointer;
+}
+.site > div > button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;                  /* padding-right 값보다 살짝 안쪽 */
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #999;   /* 화살표 색상 */
+  pointer-events: none;         /* 클릭 방해 안 되도록 */
+}
+.footer-bottom{
+    display: flex;
+    width: 100%;
+    font-size: 12px;
+    color: #999;
+    padding-top: 22px;
+    border-top: 1px solid #2a2a2a;  
+    margin-top: 40px;
+    flex-direction: column;
+    padding-bottom: 60px;
+
+}
+.menu6{
+    display: flex;
+    flex-wrap: wrap;
+
+} 
+.menu6 > li {
+    float: left;
+    width: 270px;
+    margin-top: 18px;
+    word-break: keep-all;
+    display: flex;
+
+}
+.menu6 > li > span{
+    padding-left: 7px;
+    line-height: 18px;
+    font-family: "폰트M";
+   
+}
+.menu6 > li > img{
+    width: 40px; height: 30px;
+}
+
+
