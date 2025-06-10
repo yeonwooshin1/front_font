@@ -57,6 +57,12 @@ li {
 
 }
 
+#header{
+    position: relative;
+}
+
+
+
 
 .header-top {
     position: absolute;
@@ -103,8 +109,8 @@ li {
 }
 
 #main {
-    height: 2200px;
     width: 100%;
+    padding-bottom: 160px;
 
 }
 
@@ -455,7 +461,9 @@ h2 {
     font-size: 16px;
     letter-spacing: -.4px;
 }
-
+.m6-7 a{
+    color: white;
+}
 .m6-8 {
     position: absolute;
     bottom: 10px;
@@ -469,8 +477,7 @@ h2 {
     display: flex;
 }
 
-.m6-9,
-.m6-9-1 {
+.m6-9,.m6-9-1 {
     width: 12px;
     height: 12px;
     border-radius: 6px;
@@ -598,7 +605,9 @@ h2 {
     font-size: 15px;
 
 }
-
+.k2-3 a{
+    color: white;
+}
 .j1{
     display: flex;
     justify-content: flex-end;
@@ -756,6 +765,397 @@ h2 {
     max-width: 1120px;
     justify-content: flex-end;
     margin: 0 auto;
+    display: flex;
+}
+.g3{
+    position: relative;
+    overflow: hidden;
+}
+.g11{
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+.g3-1 {
+  position: absolute;
+  inset: 0;                      /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.6);
+  
+  /* Flexbox 중앙정렬 설정 */
+  display: flex;                 
+  flex-direction: column;        /* 위아래로 쌓이게 */
+  justify-content: center;       /* 세로 중앙 */
+  text-align: center;           /* 가로 중앙 */
+  padding: 0 20px;
+  /* 초기엔 안보이게 */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s;
+  z-index: 6;
+}
+
+.g3:hover .g3-1 {
+  /* 보이게 */
+  visibility: visible;
+  opacity: 1;
+  
+}
+.g3:hover .g11{
+
+    transform: scale(1.2);
+    
+}
+
+.g3-2{
+    font-size: 21px;
+    letter-spacing: -.24px;
+    color: #fff;
+    line-height: 30px;
+    font-family: '현대B';
+    
+}
+.g3-3{
+    font-size: 16px;
+    letter-spacing: -.24px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    font-family: '현대L';
+    margin: 5px 0 0;
+}
+
+
+
+
+
+
+
+
+.f1{
+    max-width: 1120px;
+    margin: 48px auto -6px;
+    text-align: center;
+}
+
+.f2{
+    background-color: #007fa8;
+    border: 0;
+    padding: 0 13px;
+    margin: 0 0 6px 0;
+    line-height: 24px;
+    align-items: center;
+    width: auto;
+    height: 30px;
+    border-radius: 15px;
+    color: white
+}
+.f3{
+    background-color: #f6f3f2;
+    border: 0;
+    padding: 0 13px;
+    margin: 0 0 6px 0;
+    line-height: 24px;
+    align-items: center;
+    width: auto;
+    height: 30px;
+    border-radius: 15px;
+    color: black;
+
+    
+}
+.f4{
+    font-size: 14px;
+    letter-spacing: -.4px;
+    color: black;
+    line-height: 100%;
+    font-weight: 500;
+    font-family: '폰트M';
+}
+
+.f5{
+    font-size: 14px;
+    letter-spacing: -.4px;
+    color: #fff;
+    line-height: 100%;
+    font-weight: 500;
+    font-family: '폰트M';
+}
+
+.trendyHyundai-1{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 153px;
+
+}
+.y0{
+    width: 1400px;
+    margin: 60px auto 0;
+    position: relative;
+    
+}
+.y1{
+    height: 486px;
+    display: flex;
+    gap: 40px;
+
+}
+
+.y1 img{
+    width: 90%
+}
+.y1 > .y8{
+    width: 460px;
+} 
+/* 1) .y9 컨테이너를 카드 크기에 딱 맞추고, overflow 숨김 */
+.y8 .y9 {
+  position: relative;
+  width: 100%;       /* 부모(.y8)의 460px 꽉 채우기 */
+  overflow: hidden;  /* 오버레이가 튀어나오지 않도록 */
+}
+
+/* 2) 이미지가 컨테이너에 꽉 차도록 */
+.y8 .y9 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* 3) 오버레이(.y9-1) 절대 위치로 카드 전체 덮기 */
+.y9-1 {
+  position: absolute;
+  inset: 0;                    /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.6);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  color: #fff;
+  font-size: 23px;
+  font-family: '현대B';
+  
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 4) hover 시 페이드인 */
+.y8 .y9:hover .y9-1 {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.y2{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -.4px;
+    margin-top: 28px;
+    font-family: '현대B';
+}
+
+.y3{
+    margin-top: 10px;
+    margin-bottom: 22px;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -.4px;
+    font-family: '현대L';
+    color: #666;
+
+}
+
+.y4{
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -.3px;
+    font-family: '현대L';
+    color: #666;
+}
+.y5{
+    margin-bottom: -20px;
+    position: absolute;
+    bottom: 0;
+    left: 690px;
+}
+
+.y5{
+    margin-bottom: -20px;
+    position: absolute;
+    bottom: 0;
+    left: 685px;
+}
+
+.y6{
+    width: 44px;
+    height: 44px;
+    border-radius: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    background-color: rgba(31, 45, 61, .4);
+    position: absolute;
+    top: 200px;
+}
+
+.y7{
+    width: 44px; 
+    height: 44px;
+    border-radius: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    background-color: rgba(31, 45, 61, .4);
+    position: absolute;
+    top: 200px;
+    right: -2px;
+}
+
+.y6 > span::after{
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-style: solid;
+    border-width: 2px 0 0 2px;
+    transform: rotate(-45deg);
+    margin-left: 18px;
+    margin-top: 17px;
+    color: #fff; 
+}
+.y7 > span::after{
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(-45deg);
+    margin-left: 15px;
+    margin-top: 17px;
+    color: #fff;
+}
+
+.q1{
+    margin: 60px 0;
+    display: flex;
+}
+
+.q2{
+    position: relative;
+    border: #fff solid 1px;
+    overflow: hidden;
+
+}
+.q3, .q4, .q5, .q6 {
+    width: 280px;
+    height: 280px;
+    background-size: cover;
+    background-position: 50%;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+.q3 { background-image: url(https://i.ytimg.com/vi/yyj_f8HKor8/hqdefault.jpg); }
+.q4 { background-image: url(https://i.ytimg.com/vi/EKasDyf6Kcc/hqdefault.jpg); }
+.q5 { background-image: url(https://i.ytimg.com/vi/atIndnUAxMs/hqdefault.jpg); }
+.q6 { background-image: url(https://i.ytimg.com/vi/2damkYOGHtY/hqdefault.jpg); }
+
+.q2:hover .q3,
+.q2:hover .q4,
+.q2:hover .q5,
+.q2:hover .q6 {
+
+    transform: scale(1.1);
+}
+
+.q7{
+    border-radius: 15px;
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: rgba(0, 0, 0, .5);
+}
+.q8{
+    z-index: 4;
+    min-width: 59px;
+    height: 30px;
+    font-family: '현대L';
+    font-size: 14px;
+    letter-spacing: -.4px;
+    color: #fff;
+    line-height: 2.3;
+    text-align: center;
+
+}
+
+.q7-1{
+    border: #fff solid 1px;
+    border-radius: 15px;
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: rgba(0, 0, 0, .5);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 5;
+}
+
+.q8-1{
+    z-index: 5;
+    min-width: 59px;
+    height: 30px;
+    font-family: '현대L';
+    font-size: 14px;
+    letter-spacing: -.4px;
+    color: #fff;
+    line-height: 2.3;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.q2:hover .q7-1 , .q2:hover .q8-1{
+    opacity: 1;
+}
+.overlay {
+    position: absolute;    /* .q2 내부 전체를 덮음 */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 44, 95, .9);
+    display: flex;                 /* 중앙 정렬을 위해 flex */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;                    /* 숨겨두기 */
+    transition: opacity 0.3s;      /* 부드러운 페이드인 */
+    padding: 0 30px;
+    z-index: 4;
+}
+
+.q2:hover .overlay {
+    opacity: 1;
+
+}
+
+.overlay-content {
+    text-align: center;
+    color: #fff;
+}
+
+.overlay-text {
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: '현대L';
+}
+.overlay-logo {
+
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
 }
 
 
@@ -851,9 +1251,6 @@ h2 {
 
 
 
-
-
-
 #footer {
     width: 100%;
     background-color: #1c1b1b;
@@ -898,7 +1295,9 @@ h2 {
     /* 텍스트 색상 */
     font-size: 14px;
 }
-
+.menu1 a , .menu2 a{
+    color: #999;
+}
 .menu1>div:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -915,7 +1314,7 @@ h2 {
     /* 선 색상 (#fff, #ccc 등 원하는 색으로) */
 }
 
-#menu1-1 {
+#menu1-1 >a{
     color: #fff;
 
 }
@@ -1048,4 +1447,37 @@ h2 {
 .menu6>li>img {
     width: 40px;
     height: 30px;
+}
+
+
+#chatbot{
+    position: fixed;
+    right: 40px;
+    z-index: 500;
+    bottom: 80px;
+}
+.chatbot-1 {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.chatbot-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* 기본 상태: SVG + 컬러 */
+  background: url('https://www.hyundai.com/static/images/common/button/h_fab_default.svg') 
+              center center no-repeat;
+  background-size: contain;
+  background-color: #00aad2;
+  border-radius: 50%;
+}
+
+/* 클릭(active) 시에는 배경 이미지를 없애고 컬러만 보이게 */
+.chatbot-2:active {
+  background: #00aad2;
 }
