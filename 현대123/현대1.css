@@ -40,6 +40,82 @@ a {
     /*글꼴 색상*/
 }
 
+
+
+.bal1{
+    font-family: '폰트L';
+    font-size: 18px;
+    letter-spacing: -.4px;
+    color: inherit;
+    line-height: 100%;
+    position: absolute;
+    top: 478px;
+    left: 110px;
+    z-index: 999;
+}
+.bal2{
+    font-family: "폰트L";
+    font-size: 18px;
+    letter-spacing: -.4px;
+    color: inherit;
+    line-height: 100%;
+    position: absolute;
+    top: 478px;
+    right: 110px;
+    z-index: 999;
+}
+
+
+
+
+
+
+
+
+
+.si{
+    position: absolute;
+    content: "";
+    width: 34px;
+    height: 34px;
+    border: 1px solid #000;
+    border-right: 0;
+    border-bottom: 0;
+    top: 470px;
+    left: 75px;
+    display: inline-block;
+    transform: rotate(-45deg);
+    z-index: 999;
+}
+
+.si1{
+    position: absolute;
+    content: "";
+    width: 34px;
+    height: 34px;
+    border: 1px solid #000;
+    border-right: 0;
+    border-bottom: 0;
+    top: 470px;
+    right: 75px;
+    display: inline-block;
+    transform: rotate(135deg);
+    z-index: 999;
+
+
+}
+
+
+#wrap{
+    position: relative;
+}
+
+
+
+
+
+
+
 /* ul 또는 ol에서 글머리 제거*/
 li {
     list-style: none;
@@ -47,29 +123,216 @@ li {
 
 #header {
     width: 100%;
-    height: 700px;
-
-}
 
 
-.n1 {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-}
-
-#header{
-    position: relative;
-    border: red 1px solid;
-    width: 100%;
     
 }
+.ooo1{
+    position: sticky ;
+    top: 0;
+    z-index: 9999;
+    background: hsla(0, 0%, 100%, .9);
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+}
+
+.oo1 {
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+.oo2{
+
+    height: 800px;
+    background-color: rgb(246, 243, 242);
+    display: flex; 
+    height: 875px;
+
+
+}
+.o1o> img{
+    position: absolute;
+    left: -50px;
+
+}
+
+.o3{
+    position: absolute;
+    left: 0;
+    right: 35px;
+    bottom: -80px;
+    justify-content: center;
+    display: flex;
+}
+.o4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.o6{
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, .1);
+    color: transparent;
+    opacity: 1;
+    font-size: 0;
+    overflow: hidden;
+    margin: 6px;
+}
+.o7{
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: #007fa8;
+    color: transparent;
+    opacity: 1;
+    font-size: 0;
+    overflow: hidden;
+    margin: 6px;
+}
+.o5{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background: #575757;
+    border-radius: 10px;
+    vertical-align: middle;
+    margin: 6px;
+}
+.o5::after{
+    left: calc(50% - 2px);
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0;
+    border-left: 6px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+.o10{
+    height: 100px !important;
+    width: 720px;
+    position: absolute;
+    bottom: -220px;
+    left: 560px;
+
+}
+.o91{
+    display: flex;
+    position: absolute;
+    bottom: -235px;
+    left: 47.3%;
+}
+.o92{
+    width: 34px;
+    height: 3px;
+    border-radius: 1px;
+    background: rgba(0, 0, 0, .1);
+    z-index: 888;
+
+}
+.o93{
+    width: 34px;
+    height: 3px;
+    border-radius: 1px;
+    background: rgba(0, 0, 0, .1);
+    background: black;
+    z-index: 888;
+}
+
+.o11{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+.o12::before{
+    width: 9px;
+    height: 9px;
+    border: 1px solid #000;
+    border-right: 0;
+    border-bottom: 0;
+    top: 2px;
+    right: 0;
+    display: inline-block;
+    transform: rotate(-45deg);
+    z-index: 999;
+}
+
+.o12{
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+.o12>img{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+.o12 > span{
+    padding-top: 10px;
+    font-family: "폰트M";
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: -.4px;
+    color: #333;
+    text-align: center;
+}
+
+.oo2-1{
+    align-items: center;
+    width: 1900px;
+    margin: 0 auto;
+    height: 600px;
+    position: relative;
+
+}
+.ooo{
+    font-family: '현대B';
+    font-size: 86px;
+    letter-spacing: 0;
+    color: #000;
+    line-height: 82px;
+    letter-spacing: -.25px;
+
+}
+.oooo{
+    margin-top: 14px;
+    font-family: '폰트M';
+    font-size: 26px;
+    color: #000;
+    letter-spacing: -.25px;
+    font-weight: 500;
+}
+.oo22{
+    position: absolute;
+    left: 7vw;
+    top : 72px;
+    right: 0;
+    z-index: 1;
+    width: 1260px;
+    height: auto;
+    margin: 0 auto;
+    text-align: left;
+}
+.oo21{
+    position: absolute;
+    top: 230px;
+    left: 240px;
+}
+
+
+
 .header-logo{
     display: flex;
 
 }
-.header-logo > img{
-    width: 44px; height: 22px;
+.header-logo img{
+    width: 180px;
 }
 
 
@@ -153,7 +416,7 @@ li {
 }
 .p1-1{
     width: 20px;
-    height: 17px;
+    height: 100%;
     position: relative;
 }
 .ii{
@@ -162,46 +425,47 @@ li {
     background: #999
 }
 .p1-2{
-    top: 50%;
+    top: 52%;
     right: 0;
-    width: 14px;
+    width: 80%;
     margin-top: -1px;
     position: absolute;
     background-color: #000;
     margin-right: 1px;
+    height: 3px;
 }
 
-.p1-2::after{
 
-}
-
-.p1-2::before{
+.p1-1::before{
     position: absolute;
     display: block;
     height: 2px;
     background-color: #000;
     content: "";
-    width: 100%;
-    top: 0;
+    width: 26px;
+    top: 7px;
+    right: 0;
 }
-
-
-
-
-
-
-
-
-.n2 {
-    width: 1300px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.n2>img {
-    width: 1500px;
+.p1-1::after{
+    position: absolute;
     display: block;
+    height: 2px;
+    background-color: #000;
+    content: "";
+    width: 26px;
+    top: 8px;
+    right: 0;
+    top: 27px;
+
 }
+
+
+
+
+
+
+
+
 
 #main {
     width: 100%;
@@ -243,13 +507,14 @@ h2 {
     width: 1120px;
     margin: 0 auto;
     margin-top: 50px;
+    position: relative;
 }
 
 .n0>div {
     width: 100%;
 }
 
-.n0>.n1::before {
+.n0 > .n1::before {
     position: absolute;
     left: 0;
     top: 0;
@@ -1281,7 +1546,7 @@ h2 {
     margin-top: 3%;
 }
 
-.main-toggle-main>.n1 {
+.main-toggle-main>.n111 {
     padding: 24px 50px 21px;
     font-size: 16px;
     font-weight: 400;
