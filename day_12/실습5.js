@@ -118,7 +118,7 @@ else{console.log( setYear+ "년은 평년입니다.");}
 // (4) 오름차순 : 두 수 간의 작은 값을 앞에 나열 , 두 수 비교하기.
 //  A > B 비교하여 A가 더크면 A 와 B의 위치를 변경/스왑 
 // (5) 조건 : num1 > num2 , num1 > num3 , num2 > mum3 
-
+*/
 let number4 = prompt("숫자 입력 1")*1;
 let number5 = prompt("숫자 입력 2")*1;
 let number6 = prompt("숫자 입력 3")*1;
@@ -230,5 +230,3 @@ if(studyEliminate1 !== -1){
 }else{
     console.log("해당 과목은 신청 목록에 없습니다.");
 }
-
-
