@@ -104,7 +104,16 @@ else{console.log("재시험");}
 
 let drinkNames = ["콜라", "사이다", "커피"];
 let drinkPrices = [ 1000, 2000, 1500 ];
-let select = prompt( " 항목을 선택하시오. ( 0 , 1 , 2 중에서 선택하시오. )")*1;
+let select = prompt( " 항목을 선택하시오. ( 콜라 , 사이다 , 커피 중에서 선택하시오. )");
 
-if(select == 0 || select == 1 || select == 2){console.log("선택하신 음료는 " + drinkNames[select] + "입니다. 가격은 " + drinkPrices[select] + "원 입니다.");}
+
+if(select == drinkNames[0]){
+    console.log("선택하신 음료는 " + drinkNames[0] + "입니다. 가격은 " + drinkPrices[0] + "원 입니다.");
+}
+else if(select == drinkNames[1]){
+    console.log("선택하신 음료는 " + drinkNames[1] + "입니다. 가격은 " + drinkPrices[1] + "원 입니다.");
+}
+else if(select == drinkNames[2]){
+    console.log("선택하신 음료는 " + drinkNames[2] + "입니다. 가격은 " + drinkPrices[2] + "원 입니다.");
+}
 else{console.log("없는 상품입니다. 다시 골라주세요.");}
