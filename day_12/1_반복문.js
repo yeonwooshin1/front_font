@@ -62,7 +62,8 @@ for(let i =1 ; i <=9; i++){
 // [6] 3개의 각각 정수를 입력받아서 배열에 저장하시오.
 let numList = []
 for(let i = 1 ; i <=3 ; i++){
-    let number = prompt("숫자를 넣으셈");
+    let number = prompt("숫자를 넣으셈")*1;
     numList.push(number);
 }
 console.log(numList);
+
