@@ -152,10 +152,10 @@ for(i = 0 ; i<= seatStatus.length-1; i+= 2){
     for(j = i ; j <= i+1 ; j++){
     
         if(seatStatus[j] == '빈좌석'){
-            output1 += '<span style="color: blue;">빈좌석</span> ';
+            output1 += '<span style=\"color: blue;\">빈좌석</span> ';
         }
         else if(seatStatus[j] == '예약석'){
-            output1 += '<span style="color: red;">예약석</span> ';
+            output1 += '<span style=\"color: red;\">예약석</span> ';
         }
         
     }
