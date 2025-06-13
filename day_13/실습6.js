@@ -91,7 +91,7 @@ let products = ['볼펜', '노트', '지우개'];
 let stock = [10, 5, 20];
 
 for (i = 1; i <= 4; i++) {
-    let productsInput = prompt( '['+ i+ '/ 4 ]' + "볼펜 , 노트 , 지우개 3개 중 상품을 선택하세요. 나가실 경우에는 '나가기'를 쳐주세요");
+    let productsInput = prompt( '[ '+ i+ ' / 4 ] ' + "볼펜 , 노트 , 지우개 3개 중 상품을 선택하세요. 나가실 경우에는 '나가기'를 쳐주세요");
     if (productsInput == '나가기') {
         break;
     }
