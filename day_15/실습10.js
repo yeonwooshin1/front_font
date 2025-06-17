@@ -60,19 +60,19 @@ for (let i = 0; i < 학생정보.length; i++){
 
             if (수강신청.성적 == 'F') {
                 성적말 += `
-                <h4>${과목.과목명} (${과목.교수명})</h4>
+                <div><strong>${과목.과목명}</strong> (${과목.교수명})</div>
                 <ul>
                     <li>성적: ${수강신청.성적}</li>
-                    <li>이수 여부: Fail</li>
+                    <li>이수 여부: <strong style="color: red;">Fail</strong></li> 
                 </ul>
             `;
             }
             else {
                 성적말 += `
-                <h4>${과목.과목명} (${과목.교수명})</h4>
+                <div><strong>${과목.과목명}</strong> (${과목.교수명})</div>
                 <ul>
                     <li>성적: ${수강신청.성적}</li>
-                    <li>이수 여부: Pass</li>
+                    <li>이수 여부: <strong style="color: blue;">Pass</strong></li>
                 </ul>
             `;
             }
