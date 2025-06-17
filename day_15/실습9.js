@@ -22,15 +22,15 @@ const today = new Date("2025-06-17");
 
 let 구독말 = '<h1> 회원 구독 상태 대시보드 </h1><hr/>';
 
-for (let i = 0; i < 회원테이블.length; i++) {
+for (let i = 0; i < 회원테이블.length; i++) { //i for start
     let 회원 = 회원테이블[i];
     let 구독중 = false;
 
-    for (let j = 0; j < 구독로그테이블.length; j++) {
+    for (let j = 0; j < 구독로그테이블.length; j++) { //j for start
         let 구독로그 = 구독로그테이블[j];
 
         if (구독로그.회원코드 === 회원.회원코드) {
-            for(let index =0 ; index < 구독상품테이블.length ; index++){
+            for(let index =0 ; index < 구독상품테이블.length ; index++){ // index for start
                 if(구독상품테이블[index].상품코드 == 구독로그.상품코드){
                     let 종료일 = new Date(구독로그.구독종료일);
                     if(종료일 > today){
@@ -53,15 +53,15 @@ for (let i = 0; i < 회원테이블.length; i++) {
                     구독중 = true;
                     break;    
                 }
-            }
-        }
-    }
+            } // index for end
+        } //
+    } //j for end
     if (구독중 == false) {
         구독말 += `<h3> ${회원.회원이름}</h3> 
                 <div>
                     구독 내역이 없습니다.        
                 </div>`;
     }
-}
+} // i for end
 
 document.write(구독말);
