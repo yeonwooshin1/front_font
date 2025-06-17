@@ -1,6 +1,6 @@
 
 
-/*
+
 
 
 // 1.
@@ -23,30 +23,30 @@ const members = [
 ];
 
 
-for(i = 0 ; i<= 1 ; i++){
-    let question2_1 = prompt("id 입력");
-    const member = {};
+for( let i = 0 ; i<= 1 ; i++){
+  let question2_1 = prompt("id 입력");
+  const member = {};
 
-    let idDuplicate = false;
-    for (let j = 0; j < members.length; j++) {
-        if (members[j].id == question2_1) {
-            idDuplicate = true;
-            break;
-        }
+  let idDuplicate = false;
+  for (let j = 0; j < members.length; j++) {
+    if (members[j].id == question2_1) {
+        idDuplicate = true;
+        break;
     }
+  }
 
-    if (idDuplicate) {
-    console.log("존재하는 아이디입니다.");
-    continue;
-    }
-    
-    member.id = question2_1;
-    let question2_2 = prompt("password 입력");
-    member.password = question2_2;
+  if (idDuplicate) {
+  console.log("존재하는 아이디입니다.");
+  continue;
+  }
+  
+  member.id = question2_1;
+  let question2_2 = prompt("password 입력");
+  member.password = question2_2;
 
-    let question2_3 = prompt("이름 입력");
-    member.name = question2_3;
-    members.push(member);
+  let question2_3 = prompt("이름 입력");
+  member.name = question2_3;
+  members.push(member);
 }
 console.log(members);
 
@@ -360,4 +360,3 @@ html += `</table>`;
 document.write(html);
 
 
-*/
