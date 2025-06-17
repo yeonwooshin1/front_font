@@ -63,7 +63,7 @@ const scores = [
 let scoresSum = 0;
 
 for(i = 0 ; i <= scores.length-1 ; i++){
-    scoresSum += scores[i].math;
+  scoresSum += scores[i].math;
 }
 
 console.log(scoresSum/scores.length);
@@ -82,15 +82,15 @@ const products = [
 let found = false;
 
 for(i = 0 ; i < products.length; i++ ){
-    if(products[i].id == 3){
-        console.log(products[i]);
-        found = true;
-        break;
-    }
+  if(products[i].id == 3){
+    console.log(products[i]);
+    found = true;
+    break;
+  }
 }
 
 if(found == false){
-    console.log("상품을 찾을 수 없습니다.")
+  console.log("상품을 찾을 수 없습니다.");
 }
 
 // 5.
@@ -105,9 +105,9 @@ const users = [
 const activeUsers = [];
  
 for(i = 0 ; i < users.length; i++ ){
-    if(users[i].isActive == true){
-        activeUsers.push(users[i]);
-    }
+  if(users[i].isActive == true){
+    activeUsers.push(users[i]);
+  }
 }
 console.log(activeUsers);
 
@@ -122,12 +122,12 @@ const movies = [
 
 const movieTitles = [];
 for(i = 0 ; i < movies.length; i++ ){
-    movieTitles.push(movies[i].title)
+  movieTitles.push(movies[i].title)
 }
 console.log(movieTitles);
 
 
-// 7.
+// 7-1. 내 코드
 
 const team = [
   { name: '철수', department: '개발팀' },
@@ -139,20 +139,35 @@ const team = [
 const result = {'개발팀' : [] , '기획팀' : []};
 
 for(i = 0 ; i < team.length; i++ ){
-    const department = (team[i].department);
-    const name = (team[i].name); 
+  const department = (team[i].department);
+  const name = (team[i].name); 
 
-    
-    if(team[i].department == '개발팀'){
-        result[department].push(name); 
-    }
-    
-    if(team[i].department == '기획팀'){
-        result[department].push(name);
-    }
+  
+  if(team[i].department == '개발팀'){
+    result[department].push(name); 
+  }
+  
+  if(team[i].department == '기획팀'){
+    result[department].push(name);
+  }
 
 }
 console.log(result);
+
+// 7-2. 강사센세님이 알려준 미리 result에 부서명을 정의하지 않고 반복문과 조건문으로 만들어주는 더 좋은 코드.
+let result2 = { }; // 미리 부서명 배열 정의하지 않고.
+for( let index = 0 ; index <= team.length - 1 ; index++ ){
+  let t = team[index];
+  if( result2[ t.department ] ){ // result2에 index번째의 부서명이 존재하면 true / 존재하지 않으면 false  
+      result2[ t.department ].push( t.name ); // 부서명 배열에 index번째 이름 넣어준다.
+  }else{ // 존재하지 않으면 새로운 배열 생성하고 초기값으로 index번재 이름 넣어준다.
+      result2[ t.department ] = [  t.name  ]; // 배열 생성
+  }
+}
+// * if( 객체변수.속성명 ){} // 지정한 객체내 속성명이 존재하면 true , 존재하지 않으면 false 
+
+
+
 
 
 // 8.
@@ -167,11 +182,11 @@ const productsInfo = [
 let sum = 0;
 
 for(i = 0 ; i < productsInfo.length; i++ ){
-    for(j = 0 ; j < cart.length ; j++){
-        if(cart[j].id == productsInfo[i].id){
-            sum += productsInfo[i].price * cart[j].quantity;
-        }
+  for(j = 0 ; j < cart.length ; j++){
+    if(cart[j].id == productsInfo[i].id){
+      sum += productsInfo[i].price * cart[j].quantity;
     }
+  }
 }
 console.log(sum);
 
@@ -186,15 +201,15 @@ let sumA = 0;
 let sumB = 0;
 let sumC = 0;
 for(i = 0 ; i < votes.length; i++ ){
-    if(votes[i] == 'A'){
-       sumA += 1;
-    }
-    else if(votes[i] == 'B'){
-        sumB += 1;
-    }
-    else if(votes[i] == 'C'){
-        sumC += 1;
-    }
+  if(votes[i] == 'A'){
+    sumA += 1;
+  }
+  else if(votes[i] == 'B'){
+    sumB += 1;
+  }
+  else if(votes[i] == 'C'){
+    sumC += 1;
+  }
 }
 resultVotes['A'] = sumA;
 resultVotes['B'] = sumB;
@@ -208,13 +223,13 @@ const votes1 = ['A', 'B', 'B', 'C', 'A', 'B', 'A'];
 const resultVotes1 = {};
 
 for(i = 0 ; i < votes1.length; i++ ){
-    let vote1 = votes1[i];
-    if(resultVotes1[vote1] === undefined ){
-       resultVotes1[vote1] = 1;
-    }
-    else{
-        resultVotes1[vote1] += 1;
-    }
+  let vote1 = votes1[i];
+  if(resultVotes1[vote1] === undefined ){
+    resultVotes1[vote1] = 1;
+  }
+  else{
+    resultVotes1[vote1] += 1;
+  }
     
 }
 console.log(resultVotes1);
@@ -231,15 +246,15 @@ const webtoons = [
 let output = "";
 
 for(i = 0 ; i < webtoons.length ; i++){
-    output += '<div>'+ webtoons[i].title + ' ';
-    let black = parseInt(webtoons[i].rating);
-    for(j = 0 ; j < 10 ; j++){
-        if(black > j){
-            output += '★';
-        }
-        else{ output += '☆'; }
+  output += '<div>'+ webtoons[i].title + ' ';
+  let black = parseInt(webtoons[i].rating);
+  for(j = 0 ; j < 10 ; j++){
+    if(black > j){
+      output += '★';
     }
-    output += '</div>';
+    else{ output += '☆'; }
+  }
+  output += '</div>';
 }
 document.write( output );
 
