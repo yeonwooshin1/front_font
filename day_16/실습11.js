@@ -20,7 +20,7 @@ function sumArray(name){
     for(i = 0 ; i < name.length ; i++){
         sum += name[i];
     }
-    console.log(sum);
+    return sum;
 } 
 
 const numbers = [10, 20, 30, 40, 50];
@@ -37,7 +37,7 @@ function findLongestWord(Array){
             longestFruits = Array[i];
         }
     }
-    console.log(longestFruits);
+    return longestFruits;
 }
 
 const words = ['apple', 'banana', 'kiwi', 'strawberry'];
@@ -124,6 +124,7 @@ function calculator(num1 , num2 , operator){
     else if(operator == '-'){
         console.log(num1 - num2);
     }
+    else return '지원하지 않는 연산자 입니다.';
 }
 
 calculator(1 , 2, '-');
