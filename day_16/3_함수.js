@@ -59,3 +59,30 @@ addUser(add);
 console.log(userList);
 
 // 7.
+
+let random = ['사과', '수박' , '딸기' , '멜론'];
+function printFruits(name){
+    for(i = 0 ; i < name.length ; i++ ){
+        console.log(name[i]);
+    }
+}
+printFruits(random);
+
+// 8.
+function isPositive(name){
+   console.log(name > 0 ? true : false);
+}
+isPositive(1);
+isPositive(-4);
+
+// 9.
+
+let globalText = '전역';
+
+function printLocal(){
+    let localText = '지역';
+    console.log(localText);
+}
+
+console.log(globalText);
+printLocal();
