@@ -25,7 +25,7 @@ function sumArray(name){
 
 const numbers = [10, 20, 30, 40, 50];
 
-sumArray(numbers);
+console.log(sumArray(numbers));
 
 
 
@@ -41,7 +41,7 @@ function findLongestWord(Array){
 }
 
 const words = ['apple', 'banana', 'kiwi', 'strawberry'];
-findLongestWord(words);
+console.log(findLongestWord(words));
 
 
 
