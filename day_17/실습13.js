@@ -88,7 +88,13 @@ function submitButton(){         console.log(submitButton);                 // o
     const phoneNumber = phoneNumberInput.value;                             // phoneNumberInput의 DOM객체화 간소화한 것
     const memo = memoInput.value;                                           // memoInput의 DOM객체화 간소화한 것
 
-    if(name == '' || phoneNumber == '') return ;                            // 공백일 경우 추가되지 않도록하는 기능
+    if(name == '' || phoneNumber == '') {
+        alert("이름과 전화번호 둘 다 기입해주세요.");
+        nameInput.value = ''	         //공백
+        phoneNumberInput.value = ''	   
+        memoInput.value = ''	       
+        return
+    }                          // 공백일 경우 추가되지 않도록하는 기능
 
 
     codePlus++;                         // code에 idArray에 마지막 인덱스의 코드에 증감식을 써서 다음 code는 마지막 code+임
