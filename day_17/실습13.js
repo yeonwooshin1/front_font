@@ -83,18 +83,19 @@ function submitButton(){         console.log(submitButton);                 // o
     const nameInput = document.querySelector('#nameInput');                 // nameInput의 DOM객체화
     const phoneNumberInput = document.querySelector('#phoneNumberInput');   // phoneNumberInput의 DOM객체화
     const memoInput = document.querySelector('#memoInput');                 // memoInput의 DOM객체화
-
+    
     const name = nameInput.value;                                           // nameInput의 DOM객체화 간소화한 것
     const phoneNumber = phoneNumberInput.value;                             // phoneNumberInput의 DOM객체화 간소화한 것
-    const memo = memoInput.value;                                           // memoInput의 DOM객체화 간소화한 것
+    const memo = memoInput.value === '' ? 'none' : memoInput.value;         // memoInput의 DOM객체화 간소화한 것, 만약 memoInput이 없다면 none으로 보냄
+    
 
-    if(name == '' || phoneNumber == '') {
+    if(name == '' || phoneNumber == '') {                                   // 공백일 경우 추가되지 않도록하는 기능
         alert("이름과 전화번호 둘 다 기입해주세요.");
-        nameInput.value = ''	         //공백
+        nameInput.value = ''	                                            // 전체 리셋
         phoneNumberInput.value = ''	   
         memoInput.value = ''	       
         return
-    }                          // 공백일 경우 추가되지 않도록하는 기능
+    }                        
 
 
     codePlus++;                         // code에 idArray에 마지막 인덱스의 코드에 증감식을 써서 다음 code는 마지막 code+임
