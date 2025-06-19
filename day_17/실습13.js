@@ -91,9 +91,9 @@ function submitButton(){         console.log(submitButton);                 // o
 
     if(name == '' || phoneNumber == '') {                                   // 공백일 경우 추가되지 않도록하는 기능
         alert("이름과 전화번호 둘 다 기입해주세요.");                          // 다시 치라는 알림창 추가함
-        nameInput.value = ''	                                            // 전체 리셋
-        phoneNumberInput.value = ''	   
-        memoInput.value = ''	       
+        nameInput.value = '';	                                            // 전체 리셋
+        phoneNumberInput.value = '';   
+        memoInput.value = '';   
         return
     }                        
 
@@ -103,9 +103,9 @@ function submitButton(){         console.log(submitButton);                 // o
         // pushMan = code랑 name이랑 phoneNumber이랑 memo랑 입력한 value값들 저장하여 객체화
     idArray.push(pushMan);              // pushMan을 idArray 배열에 push
 
-    nameInput.value = ''	        // 입력 다 한 후 value값 공백~!
-    phoneNumberInput.value = ''	    // 입력 다 한 후 value값 공백~!
-    memoInput.value = ''	        // 입력 다 한 후 value값 공백~!
+    nameInput.value = '';	        // 입력 다 한 후 value값 공백~!
+    phoneNumberInput.value = '';	    // 입력 다 한 후 value값 공백~!
+    memoInput.value = '';	        // 입력 다 한 후 value값 공백~!
 
 
     allSearchSector();      // 다 넣은 후 allSearchSector 새로고침
@@ -127,7 +127,7 @@ function allSearchSector(){                 // 배열 넣어서 html에 올려�
                     <td> ${pushArray.name} </td>
                     <td> ${pushArray.phoneNumber} </td>
                     <td> ${pushArray.memo} </td>
-                </tr>`                                      // html에 추가할 요소들 적는중 
+                </tr>`              ;                        // html에 추가할 요소들 적는중 
                                                             // pushArray (= idArray).요소들
     }
 
