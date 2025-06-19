@@ -90,7 +90,7 @@ function submitButton(){         console.log(submitButton);                 // o
     
 
     if(name == '' || phoneNumber == '') {                                   // 공백일 경우 추가되지 않도록하는 기능
-        alert("이름과 전화번호 둘 다 기입해주세요.");
+        alert("이름과 전화번호 둘 다 기입해주세요.");                          // 다시 치라는 알림창 추가함
         nameInput.value = ''	                                            // 전체 리셋
         phoneNumberInput.value = ''	   
         memoInput.value = ''	       
