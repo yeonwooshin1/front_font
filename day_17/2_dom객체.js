@@ -69,7 +69,7 @@ function func9(){
     if(input.value == '') return ;
     
     array1.push(input.value);
-    array.textContent = `[ ${array1} ]`;
+    array.textContent = `[ ${array1} ] `;
 
     input.value = '';
 }
