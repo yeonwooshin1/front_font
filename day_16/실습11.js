@@ -66,6 +66,7 @@ console.log(userScore);
 
 
 // 5.
+
 function findTopStudent(Array){
     let topStudent = '';
     let topScore = 0;
