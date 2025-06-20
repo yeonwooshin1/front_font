@@ -185,6 +185,7 @@ function employeeOnclick(){          console.log('--- employeeOnclick exe ---');
     categoryInput.value = '';                                              // 입력 후 value값 초기화
     
     employeeList ();
+    employeeSelector();
 
 } // func end
 
@@ -221,7 +222,7 @@ function employeeList (){ console.log('===== employeeList exe =====');          
 
         html += `<tr>    
                     <td> <img src=${list.img} ></td>   <th> ${eL.name} </td>   <td> ${dL.name} </td> <td> ${rL.name} </td>     
-                    <td> <button class="" onclick="deleteEmployeeList(${list.numberL})"> 삭제 </button> <button class="editEmployeeList(${list.numberL})"> 수정 </button> </td>  
+                    <td> <button class="" onclick="deleteEmployeeList(${list.numberL})"> 삭제 </button> <button onclick="editEmployeeList(${list.numberL})">수정</button> </td>
                 </tr>`                 // html 추가중, 객체들을 넣어줌  , 변경, 삭제 onclick 이벤트들은 여기다가 추가해줘야 실행이 됨. html에 넣어봤자 소용없음.
                 
                 
@@ -231,55 +232,106 @@ function employeeList (){ console.log('===== employeeList exe =====');          
 
 } // func end
 
-function Delete(numberD){                         // Department 부서 삭제 버튼 함수
 
 
+function deleteEmployeeList(numberL) {  console.log('=== deleteEmployeeList exe ===' )  ;      // Employee-list 부서 삭제 버튼 함수
+    let removedNumberE = null;
 
-} // func end
-
-
-
-
-function deleteEmployeeList(numberL) {  console.log('=== deleteEmployeeList exe ===' )        // Employee-list 부서 삭제 버튼 함수
     for(let i = 0; i<listArray.length; i++){                                                  // 
         if(listArray[i].numberL === numberL){
-            let question = confirm(`해당 사원의 정보를 삭제하시겠습니까?`);   // 동일하다면 삭제여부 한 번 더 물어봄
-            if(question === true){                                          
-                 listArray.splice(i, 1);
+            if(!confirm(`해당 사원의 정보를 삭제하시겠습니까?`)){return;}   // 동일하다면 삭제여부 한 번 더 물어봄                                     
+            removedNumberE = listArray[i].numberE;
+            listArray.splice(i, 1);
             alert('삭제가 완료 되었습니다.');
             break;
-            } // if end
-            break;
+
         } // if end
     } // for end
 
+    if (removedNumberE !== null ){
+        for (let j = 0; j < employeeArray.length; j++) {
+            if (employeeArray[j].numberE === removedNumberE) {
+                employeeArray.splice(j, 1);
+                break;
+            }
+        }
+    }    
+
     employeeList ();
+    employeeSelector();
 } // func end
 
 
 
 
-function editEmployeeList(numberL) {  console.log('=== editEmployeeList exe ===' )        // Employee-list 부서 변경 버튼 함수
+function editEmployeeList(numberL){  console.log('=== editEmployeeList exe ===' )        // Employee-list 부서 변경 버튼 함수
     for(let i = 0; i<listArray.length; i++){
-        if(listArray[i] === numberL){
-            
-        const employeeE =prompt("변경할 이름을 입력하세요.");
-        if (employeeE === null) return;  // 취소했으면 종료
-
-        const deparmentE = prompt("변경할 부서를 입력하세요.");
-        if (deparmentE === null) return;
+        const list = listArray[i];                                                  // 한 번 더 해,, 복붙해,,
+        let eL = '';                                                               
+        let rL = '';                                                               
+        for(let j = 0 ; j < rankArray.length ; j++){
+            if(rankArray[j].numberR === list.numberR){                            
+                rL = rankArray[j];                                                
+                break;                                                             
+            } // if end
+        }// for j end
+        for(let k = 0; k < employeeArray.length ; k++){                            
+            if(employeeArray[k].numberE === list.numberE){                          
+                eL = employeeArray[k];                                              
+                break;                                                              
+            } // if end
+        }// k end
+        for(let l = 0; l < departmentArray.length ; l++){                           
+            if(departmentArray[l].numberD === list.numberD){                        
+                dL = departmentArray[l];                                           
+                break;                                                            
+            } // if end                                                             
+        } // for l end                                                               // ctrl + v
         
-        const rankE = prompt("변경할 직급을 입력하세요.");
-        if (rankE === null) return;
+        
+        if(listArray[i].numberL === numberL){                       // numberL 매개변수와 listArray[i].numberL이랑 같다면
+            
+            const employeeE =prompt("변경할 이름을 입력하세요.");   // prompt 실행
+            if (employeeE === null) return;                         // 취소했으면 종료     
 
-        list[i]. = employeeE
+            
+            const rankE = prompt("변경할 직급을 입력하세요.");      
+            if (rankE === null) return;
 
-
-
+            eL.name = employeeE;                                   // 넣어주기
+            rL.name = rankE;                                       // 넣어주기
+            alert("사원 정보가 변경되었습니다.");                   // 알림주기
+            employeeList ();                                       // 부서 리스트 최신화
+            employeeSelector();
+            return;  // 변경 후엔 함수 종료
+        } // if end
     } // for end
-
-
 } // func end
 
 
 //======================================================= 부서 (중간) 파트 끝 =================================================================================
+
+
+employeeSelector();
+function employeeSelector(){          console.log('--- employeeSelector exe ---');  // 부서명단 추가 함수 employeeSelector()
+    
+    const categoryInput = document.querySelector('#categoryInputE');   // 사원 입력칸 dom객체화
+
+    let html = '<option value="" disabled selected > 휴가 신청 사원을 선택하세요. </option> ';
+    for(let i= 0; i < employeeArray.length; i++){
+        const employee = employeeArray[i];
+        html += `<option value="${employee.numberE}"> ${employee.name} </option>` ;
+    } // for end
+    
+    categoryInput.innerHTML = html;
+}
+
+function vacationListInput(){
+    const categoryInput = document.querySelector('#categoryInputE');   // 사원 입력칸 dom객체화
+    const dateInput1 = document.querySelector('#vacation-apply > div > div > dateInput1');   // 사원 입력칸 dom객체화
+    const dateInput2 = document.querySelector('#vacation-apply > div > div > dateInput2');   // 사원 입력칸 dom객체화
+    const vacationInput = document.querySelector('#vacationInput');
+    
+
+}
+
