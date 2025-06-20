@@ -42,23 +42,7 @@
     (2) 저장할 자료들의 분리( 중복 배제 ) 1:M (하나가 여러개를 참조/관계)
     (3)  분리된 자료들끼리 연관관계 X
         * 테이블(배열) , 테이블내 행 / 가로 단위 (객체)
-
     3. (백) 함수 (기능) 설계
-        (1) '등록버튼' 클릭했을 때 입력받은 3가지 정보를 배열에 저장
-            함수명      :      (아무거나) 'submitButton'
-            매개변수    :      x    *document.querySelector 로 대체
-            반환값      :      x
-            로직        :   1. input으로부터 입력받은 값 가져오기
-                            2. 입력값 3개로 객체를 구성
-                            3. 구성된 객체를 연락처목록(배열)에 저장    
-            실행조건 : '등록버튼'을 클릭 (onClick) 했을때
-        
-        (2) '전체조회' 함수
-            함수명      :       'allSearchSector'
-            매개변수    :       x
-            반환값      :       x
-            로직        :       1. 특정한 구역(table)에 배열내 모든 정보를 HTML 형식으로 출력한다
-            실행조건    :       1.페이지가 열렸을 때 ( 최초 1번 )  2. 등록 성공 했을때 ( 새로고침 )
     
     4. (백) 로직
 
@@ -163,7 +147,7 @@ function ProductPrint(){    console.log(ProductPrint);
     for(let i = 0 ; i < productList.length ; i++){
         const productFor = productList[i];
         html += `<tr>    
-                        <td> <img src=${productFor.pimg}> </td>   <th>  ${productFor.cno} </th>   <td>  ${productFor.pname} </td> 
+                        <td> <img src=${productFor.pimg}> </td>   <th>  ${getCategory( productFor.cno ).cname} </th>   <td>  ${productFor.pname} </td> 
                         <td>  ${productFor.pprice} </td>             <td>  ${productFor.pdate} </td>       
                         <td> <button class="btnDelete" onclick="deleteList(${productFor.pno})"> 삭제 </button> <button class="btnEdit" onclick="editList(${productFor.pno})"> 수정 </button> </td> 
                     </tr>`
@@ -208,3 +192,16 @@ function editList(pno){
     //(2). 실패시
     alert("[실패] 항목 삭제");  // (2) 못찾았다.
 } // func end
+
+// 6. 카테고리번호(cno) 에 해당 하는 카테고리객체 1개 반환 함수
+function getCategory( cno ){ 
+    console.log('>> getCategory exe '); console.log( cno ); 
+    // 1. 매개변수(cno) 와 동일한 카테고리객체 찾기 
+    for( let index = 0 ; index <= categoryList.length - 1 ; index++ ){
+        if( categoryList[index].cno == cno ){ // 만일 index번째 cno 
+            return categoryList[index]; // 찾은 객체를 반환한다.
+        } // if end 
+    } // for end 
+    // 2. 못찾았다.
+    return null;    // 
+} // func end 
