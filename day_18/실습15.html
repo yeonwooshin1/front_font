@@ -1,16 +1,393 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
+  <meta charset="utf-8">
+  <title>인사 관리 대시보드</title>
+<style>
+/* — 전체 리셋 & 기본 스타일 — */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #e8edf5;
+  color: #2d3748;
+}
+input, select, button {
+  font-family: inherit;
+  font-size: 15px;
+}
+
+/* — 대시보드 헤더 컨테이너 — */
+#dashboard-container {
+  max-width: 1600px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+#dashboard {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1a202c;
+  line-height: 1.2;
+}
+#dashboard-mini {
+  font-size: 18px;
+  color: #4a5568;
+  margin-top: 4px;
+}
+
+/* — 3컬럼 레이아웃 래퍼 — */
+#wrap {
+  max-width: 1600px;
+  margin: 24px auto;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* — 공통 패널 스타일 — */
+#department,
+#employee,
+#vacation {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: calc(100vh - 200px);
+}
+#department { flex: 1.1; }
+#employee   { flex: 3;   }
+#vacation   { flex: 1.1; }
+
+/* — 스크롤 가능한 영역 공통 — */
+#department-main,
+#employee-list-div,
+#vacation-list > div {
+  overflow-y: auto;
+  margin-top: 16px;
+  padding-right: 8px;
+}
+
+/* ============================================
+   부서 관리 영역
+   ============================================ */
+#department-search-div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  row-gap: 12px;
+  column-gap: 12px;
+  align-items: start;
+  margin-bottom: 16px;
+}
+#department-search-div > div:nth-child(1) {
+  grid-column: 1 / -1;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a202c;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+#department-search-div input {
+  grid-column: 1;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+}
+#department-search-div button {
+  grid-column: 2;
+  padding: 10px 20px;
+  background: #6b46c1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#department-search-div button:hover {
+  background: #553c9a;
+}
+#department-main table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#department-main th,
+#department-main td {
+  padding: 12px;
+  border-bottom: 1px solid #edf2f7;
+}
+#department-main th {
+  background: #f7fafc;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a5568;
+}
+#department-main th:nth-child(1),
+#department-main td:nth-child(1) { width: 70%; }
+#department-main th:nth-child(2),
+#department-main td:nth-child(2) { width: 30%; }
+#department-main td button {
+  background: none;
+  border: none;
+  color: #6b46c1;
+  font-size: 13px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+#department-main td button:last-child {
+  color: #e53e3e;
+}
+
+/* ============================================
+   사원 관리 등록 영역
+   ============================================ */
+#employee-register-div {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:
+    auto
+    auto auto
+    auto auto
+    auto;
+  grid-template-areas:
+    "header      header"
+    "label-name  label-rank"
+    "input-name  input-rank"
+    "label-dept  label-photo"
+    "input-dept  input-photo"
+    ".           button";
+  column-gap: 16px;
+  row-gap: 8px;
+  padding: 0;
+  margin-top: 0;
+}
+#employee-register-div > div:nth-child(1) {
+  grid-area: header;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a202c;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+#employee-register-div > div,
+#employee-register-div > input,
+#employee-register-div > select,
+#employee-register-div > button {
+  align-self: start;
+}
+#employee-register-div > div:nth-child(2) {
+  grid-area: label-name;
+  font-size: 14px;
+  color: #4a5568;
+}
+#employee-register-div > input#employeeName {
+  grid-area: input-name;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+}
+#employee-register-div > div:nth-child(4) {
+  grid-area: label-rank;
+  font-size: 14px;
+  color: #4a5568;
+}
+#employee-register-div > input#employeeRank {
+  grid-area: input-rank;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+}
+#employee-register-div > div:nth-child(6) {
+  grid-area: label-dept;
+  font-size: 14px;
+  color: #4a5568;
+}
+#employee-register-div > select#categoryInput {
+  grid-area: input-dept;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+}
+#employee-register-div > div:nth-child(8) {
+  grid-area: label-photo;
+  font-size: 14px;
+  color: #4a5568;
+}
+#employee-register-div > input#employeeImg {
+  grid-area: input-photo;
+  padding: 6px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+}
+#employee-register-div > button {
+  grid-area: button;
+  justify-self: end;
+  padding: 12px 24px;
+  background: #6b46c1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#employee-register-div > button:hover {
+  background: #553c9a;
+}
+
+/* ============================================
+   사원 목록 테이블
+   ============================================ */
+#employee-list-div > div:first-child {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a202c;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+#employee-list-div table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#employee-list-div th,
+#employee-list-div td {
+  padding: 12px;
+  border-bottom: 1px solid #edf2f7;
+  text-align: center;
+}
+#employee-list-div th {
+  background: #f7fafc;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a5568;
+}
+#employee-list-div th:nth-child(1),
+#employee-list-div td:nth-child(1) { width: 10%; }
+#employee-list-div th:nth-child(2),
+#employee-list-div td:nth-child(2) { width: 15%; }
+#employee-list-div th:nth-child(3),
+#employee-list-div td:nth-child(3) { width: 15%; }
+#employee-list-div th:nth-child(4),
+#employee-list-div td:nth-child(4) { width: 30%; }
+#employee-list-div th:nth-child(5),
+#employee-list-div td:nth-child(5) { width: 30%; }
+#employee-list-div td img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+#employee-list-div td button {
+  background: none;
+  border: none;
+  color: #6b46c1;
+  font-size: 13px;
+  cursor: pointer;
+}
+#employee-list-div td button + button {
+  margin-left: 12px;
+}
+#employee-list-div td button:last-child {
+  color: #e53e3e;
+}
+
+/* ============================================
+   휴가 신청 영역
+   ============================================ */
+#vacation-apply {
+  display: grid;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+#vacation-apply > div:first-child {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a202c;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+#vacation-apply select,
+#vacation-apply input,
+#vacation-apply button {
+  align-self: start;
+}
+#vacation-apply select,
+#vacation-apply input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+}
+#vacation-apply button {
+  width: 100px;
+  padding: 12px;
+  background: #6b46c1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ============================================
+   휴가 목록
+   ============================================ */
+#vacation-list > div:first-child {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a202c;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.vacationListContainer .vacationList {
+  background: #f7fafc;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+.vacationListContainer .vacationList > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.vacationListContainer .vacationList button {
+  padding: 8px 16px;
+  background: #e53e3e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+</style>
 </head>
+
 <body>
+    <div id="dashboard-container"> <!-- 대쉬보드 칸 -->
+        <div id="dashboard">인사 관리 대시보드</div>
+        <div id="dashboard-mini">부서 · 사원 · 휴가 통합관리 시스템 ( ver.shinyeonwoo )</div>
+    </div>
     <div id="wrap">                            <!-- wrap -->
         <div id="department">                                                                           <!-- 부서관리 통합 div -->
             
             <div id="department-search-div">                                                                 <!-- 부서관리 검색 div-->
-                <div> 부서관리 <br> </div>                                                              <!-- 부서관리 글자 div-->
-                <input id="departmentSearch" type="text" placeholder="부서명 입력" />                    <!-- 신규 부서명 입력칸 -->
-                <button class="departmentSummitBtn" onclick="departmentOnclick()"> 추가 </button>                                  <!-- 추가 버튼 온클릭 넣어야함-->                                                                                    
+                <div> 부서관리 </div>                                                              <!-- 부서관리 글자 div-->
+                <div><input id="departmentSearch" type="text" placeholder="부서명 입력" /></div>               <!-- 신규 부서명 입력칸 -->
+                <div><button class="departmentSummitBtn" onclick="departmentOnclick()"> 추가 </button></div>                           <!-- 추가 버튼 온클릭 넣어야함-->                                                                                    
             </div>
 
             <div id="department-main">                                                                   <!-- 부서명 출력 영역 -->
@@ -40,16 +417,20 @@
 
         <div id="employee">                                                                                       <!-- 사원관리 통합 div-->
             <div id="employee-register-div">                                                                        <!-- 사원등록 div-->
-                <div> 사원 등록 <br> </div>                                                                                  <!-- <p>사원관리 div-->
+                <div> 사원 등록 </div>                                                                                  <!-- <p>사원관리 div-->
+                
+                <div> 이름 </div>   
                 <input id="employeeName"  type="text"   placeholder="이름을 입력하세요." />                             <!-- 이름입력 input-->
-
+                
+                <div> 직급 </div>
                 <input id="employeeRank"  type="text"   placeholder="직급을 입력하세요." />                          <!-- 직급입력 input-->
-
+                
+                <div> 부서 </div>
                 <select id="categoryInput">                                                             <!-- 이거 부서선택 셀렉트 박스임 -->
                     <option value="" disabled selected > 부서를 선택하세요. </option>                       <!-- 부서 선택하세요.disabled selected -->
                     <option value="1"> 개발팀 </option>   <option value="2"> 기획팀 </option>
                 </select>
-
+                <div> 사진 </div>
                 <input id="employeeImg"   type="file"  accept="image/* "/>                                          <!-- 직원 사진 input-->
 
                 <button class="employeeSummitBtn" onclick="employeeOnclick()"> 등록 </button>                                 <!-- 추가 버튼 온클릭 넣어야함--> 
@@ -57,7 +438,7 @@
             </div>  <!--employee-register-div end-->
             
             <div id="employee-list-div">                                                                <!-- 사원리스트 div-->
-                <div> 사원 전체 목록 <br> </div>                                                               <!-- <p>사원전체목록 div-->
+                <div> 사원 전체 목록 </div>                                                               <!-- <p>사원전체목록 div-->
                 <table>                   <!-- 테이블 -->                       
                     <thead>                 <!-- head 사원목록 -->
                         <tr> 
@@ -101,13 +482,13 @@
                     <div>휴가 사유</div>                                                                                        <!--<p>휴가 사유 div-->
                     <input id="vacationInput" type="text" placeholder="예:농땡이" />                                                         <!-- 사유 적는 input 칸-->
                 </div>
-
+                <button class="employeeSummitBtn" onclick="vacationListInput()"> 신청 </button>
             </div>  <!-- vacation-apply div end -->
 
             <div id="vacation-list">                            <!-- 휴가 신청 전체 목록 div-->
                 <div>휴가 신청 전체 목록 <br></div>                 <!-- 휴가 신청 전체 목록 div-->
                 <div>                                               
-                    <div class="vacationList">      <!-- 휴가 신청 전체 목록 div-->
+                    <div class="vacationListContainer">      <!-- 휴가 신청 전체 목록 div-->
                         <div>
                             <div>신연우</div>           <!-- name -->
                             <button class="" > 신청취소 </button>    <!-- cancel button onClick 추가 필요-->
