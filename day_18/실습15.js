@@ -284,13 +284,13 @@ function deleteEmployeeList(numberL) {  console.log('=== deleteEmployeeList exe 
     } // for k end
 
     if(count !== 0){
-      if(confirm(`해당 사원의 휴가 ${count}건이 있습니다. 모두 삭제하시겠습니까?`)){              // 만약 count가 0이 아니라면 즉 삭제하는 사원이 휴가를 가지고 있다면?
+      if(confirm(`해당 사원의 휴가 '${count}건'이 있습니다. 모두 삭제하시겠습니까?`)){              // 만약 count가 0이 아니라면 즉 삭제하는 사원이 휴가를 가지고 있다면?
         for(let l = vacationArray.length - 1 ; l >= 0; l--){ // vactionArray 뒤에서 부터 순회 이유? 배열 0 1 2이 동일한 사람일 때 0이 지워지면 1 2배열이 0 1이 됨, 근데 반복문은 1로 증감하기 때문에 0이 된 애는 지울 수 없어서
           if(vacationArray[l].numberE == removedNumberE){                                      // vacationArray[l].numberE와 삭제된 numberE가 같은 지 확인
             vacationArray.splice(l, 1);                                                        // 같다면 지움
           } // if end
         } // for l end                                                                         // 있을 때까지 반복문, 이러면 다 지워짐
-        alert(`${count}건의 휴가 기록을 삭제했습니다.`);                                        // 다 삭제 됐다고 하고 count만큼 지워졌다고 함.
+        alert(`'${count}건'의 휴가 기록을 삭제했습니다.`);                                        // 다 삭제 됐다고 하고 count만큼 지워졌다고 함. 삭제 안하면 삭제된 사원이라고 뜰거임 이유는 397줄 참고
       } // if end                                                                     
     } // if end
   
