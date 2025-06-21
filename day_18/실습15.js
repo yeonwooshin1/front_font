@@ -44,7 +44,6 @@ let currentNumberV = vacationArray[lastNumberV].numberV; // 코드를 자동대�
 
 
 function departmentOnclick(){          console.log('--- departmentOnclick exe ---');  // 부서명단 추가 함수 departmentOnclick()
-    if(departmentArray.length == 0){currentNumberD = 1 ;}
     // (1) 입력 마크업객체 가져오기
 
     const departmentSearch = document.querySelector('#departmentSearch');   // 부서 입력칸 dom객체화
@@ -68,7 +67,7 @@ function departmentOnclick(){          console.log('--- departmentOnclick exe --
 
     console.log(departmentArray);
 
-    const departmentPush = {numberD : currentNumberD++ , name : department };   // 배열에 푸시할 놈 value값 받아서 넣어주기 
+    const departmentPush = {numberD : ++currentNumberD , name : department };   // 배열에 푸시할 놈 value값 받아서 넣어주기 
     
 
     // (4) 구성한 객체를 배열에 저장
@@ -195,7 +194,7 @@ function employeeOnclick(){          console.log('--- employeeOnclick exe ---');
     rankArray.push(rPush);                                                              // 푸시
     // ListArray에 rPush에서 numberR만 넣고 ePush에서 numberE만 넣고 numberD에 category.value 넣고 img엔 imageUrl 삼항연산자 넣겠단 거임
 
-    const lishPush = {numberL:listArray.length+1 , numberR : rPush.numberR , numberE : ePush.numberE , numberD : category , img : imageUrl };
+    const lishPush = {numberL: ++currentNumberL , numberR : rPush.numberR , numberE : ePush.numberE , numberD : category , img : imageUrl };
     
     listArray.push(lishPush);       // lidhPush 를 listArray에 잘 푸시해주자
     console.log(listArray);         // 콘솔에 출력하여 잘 실행하는지 확인해보장
@@ -262,16 +261,6 @@ function deleteEmployeeList(numberL) {  console.log('=== deleteEmployeeList exe 
         if(listArray[i].numberL === numberL){                                                  // 만약 listArray i번째의 리스트넘버랑 매개변수 리스트넘버가 같다면?
             if(!confirm(`해당 사원의 정보를 삭제하시겠습니까?`)){return;}                       // 동일하다면 삭제여부 한 번 더 물어봄                                     
             removedNumberE = listArray[i].numberE;                                            // 지우기 전 employee 넘버를 넣어줌
-            for(let k =0; k < vacationArray.length ; k++){                                    // vacationArray 배열 순회
-                if(removedNumberE == vacationArray[k].numberE){                               // 만약 지워질 employee랑 vacation k번째 emplyee 넘버가 같다면?
-                    if(!confirm("휴가 신청 목록에 해당 사원이 있습니다. 정말 삭제하시겠습니까?")){  // 휴가계획에 사람이 있으니 정말 삭제하냐고 다시 한 번 물어보고 취소한다면?
-                        return;                                                                 // 안 지우겠다고 했으니 함수 종료                                                        
-                    } // if end
-                    vacationArray.splice(k , 1);                                                // vacationArray의 k번째 배열 하나 삭제 왜냐면 listArray가 삭제되면 사람도 삭제 되어야함 그리고 휴가에 그 인원도 삭제 되어야함   
-                    break;                                                                      // break;해서 해당 k 반복문 나감
-                } // if end
-            } // for k end
-
             listArray.splice(i, 1);                                                             //  listArray i번째 배열 하나 삭제
             alert('삭제가 완료 되었습니다.');                                                   // 삭제되었다는 알림창 추가
             break;                                                                            // break;
@@ -286,6 +275,27 @@ function deleteEmployeeList(numberL) {  console.log('=== deleteEmployeeList exe 
             } // if end
         } // for j end
     } // if end
+    
+    let count = 0;                                                                              // count 변수 정의
+    for(let k = 0 ; k < vacationArray.length; k++){                                             // vacationArray 배열 순회
+      if(vacationArray[k].numberE == removedNumberE){                                           // vacationArray k번째 numberE이 removed된 numberE랑 동일하다면
+        count++;                                                                                // count 증감
+      } // if end
+    } // for k end
+
+    if(count !== 0){
+      if(confirm(`해당 사원의 휴가 ${count}건이 있습니다. 모두 삭제하시겠습니까?`)){              // 만약 count가 0이 아니라면 즉 삭제하는 사원이 휴가를 가지고 있다면?
+        for(let l = vacationArray.length - 1 ; l >= 0; l--){ // vactionArray 뒤에서 부터 순회 이유? 배열 0 1 2이 동일한 사람일 때 0이 지워지면 1 2배열이 0 1이 됨, 근데 반복문은 1로 증감하기 때문에 0이 된 애는 지울 수 없어서
+          if(vacationArray[l].numberE == removedNumberE){                                      // vacationArray[l].numberE와 삭제된 numberE가 같은 지 확인
+            vacationArray.splice(l, 1);                                                        // 같다면 지움
+          } // if end
+        } // for l end                                                                         // 있을 때까지 반복문, 이러면 다 지워짐
+        alert(`${count}건의 휴가 기록을 삭제했습니다.`);                                        // 다 삭제 됐다고 하고 count만큼 지워졌다고 함.
+      } // if end                                                                     
+    } // if end
+  
+    console.log(employeeArray);
+    console.log(listArray);
     vacationList();                                             // 휴가 계획에 있는 사람도 최신화로 없애줘야함 렌더링
     employeeList ();                                            // 사원 목록도 렌더링
     employeeSelector();                                         // 휴가 명단 사원option도 최신화 employeeSelector()
@@ -326,6 +336,7 @@ function editEmployeeList(numberL){  console.log('=== editEmployeeList exe ===' 
             employeeList ();                                       // 부서 리스트 최신화
             employeeSelector();                                     // 사원 목록도 렌더링
             vacationList();                                         // 휴가 목록 사람 이름도 바꿔줘야지 렌더링
+            console.log(employeeArray);
             return;  // 변경 후엔 함수 종료
         } // if end
     } // for end
@@ -383,21 +394,21 @@ function vacationList() {                                           // 휴가 �
   let html = '';                                                                                // html 변수 생성
   for(let i = 0; i < vacationArray.length; i++){                                                // vacationArray 배열순회
     const vacation = vacationArray[i]                                                           // 간소화
-    let eL = '';                                                                                // eL 변수 만들어줌
+    let eLName = '삭제된 사원';                                                                  // eLName 변수 만들어줌 초기값 '삭제된 사원'
     for(let k = 0; k < employeeArray.length ; k++){                             // employeeArray 배열에 순회 이유는 위와 동일하지만 vacationArray는 numberE가 들어가 있으니 그걸 이름으로 나타내주기 위한 작업
         if(employeeArray[k].numberE == vacation.numberE){                       // employeeArray[k].numberE와 vacationArray[i].namberE가 같다면
-            eL = employeeArray[k];                                              // eL 변수에 employee k번째 배열 넣어주기
+            eLName = employeeArray[k].name;                                              // eL 변수에 employee k번째 배열의 name 넣어주기
             break;                                                              // break; 하고 나가~
         } // if end;
     }// for j end
     html += `<div class="vacationList">                                              
                 <div>
-                    <div>${eL.name}</div>          
+                    <div>${eLName}</div>          
                     <button class="" onclick = "vacationListDelete(${vacation.numberV})"> 신청취소 </button>    
                 </div>
                 <div> ${vacation.date1} ~ ${vacation.date2}</div>            
                 <div> 사유 : ${vacation.reason}</div>                          
-            </div>`                                                                         // html에 다 넣어줘 eL.name은 뭐냐면 vacation엔 사원코드만 들어가 있으니 위에서 순회해서 이름으로 넣어준것
+            </div>`                             // html에 다 넣어줘 eLName은 뭐냐면 vacation엔 사원코드만 들어가 있으니 위에서 순회해서 employeeArray[k].name으로 넣어준것, 삭제돼서 사원이 정의되지 않으면 삭제된 사원으로 하기(초기값)
   } // for i end
 
   container.innerHTML = html;                                                               // 표현해주시면 됩니다. innerHTML로
