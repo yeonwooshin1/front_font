@@ -1,16 +1,5 @@
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const deptInput = document.querySelector('#departmentSearch');
-  deptInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();      // 폼 제출 같은 기본 동작 막기
-      departmentOnclick();     // 엔터키 일 때 실행할 함수
-    }
-  });
-});
-
-
 //============================================= [1] 부서목록 데이터 모델링 샘플 ====================================================//
 
 const departmentArray = [{numberD : 1 , name : '개발팀'} , {numberD : 2 , name : '기획팀'} ]        //기획부서 배열
