@@ -57,6 +57,13 @@ function departmentOnclick(){          console.log('--- departmentOnclick exe --
         alert('부서명을 입력해주세요.');                                      
         return;
     }
+    for(let i = 0; i < departmentArray.length ; i++){                       // departmentArray 배열 순회
+        if(departmentArray[i].name == department){                          // 넣은 값이 departmentArray i번째 배열에 있다면
+            alert("이미 존재하는 부서입니다.");                               // 있다고 알림
+            return;                                                         // 함수 종료
+        }
+    }
+
     // (3) 여러 데이터 객체로 구성 하기.
 
     console.log(departmentArray);
