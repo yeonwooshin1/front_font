@@ -137,7 +137,7 @@ function editDepartment(numberD){                           // department 부서
     
     for(let i =0; i< departmentArray.length; i++ ){         // departmentArray 배열을 순회함
         if(departmentArray[i].numberD === numberD){         // departmentArray [i]배열의 numberD랑 매개변수 numberD랑 동일확인
-            const departmentEdit = prompt(`변경할 부서명을 입력해주십시오 (현재 부서명 : ${departmentArray[i].name})`) // 동일하다면 변경할 입력칸 제공
+            const departmentEdit = prompt(`변경할 부서명을 입력해주십시오 (현재 부서명 : ${departmentArray[i].name})`, departmentArray[i].name) // 동일하다면 변경할 입력칸 제공 prompt( A, B) A: 물어볼 거 , B: 미리 들어있을 칸
             if(departmentEdit.trim() == ''){ alert('변경할 부서명을 입력하십시오.'); return editDepartment(numberD);}         // 입력이 null이면 return editDapartment 함수 다시 실행;           .trim()은 공백을 없애줌
             if(departmentEdit == null){ return;}                                                    // 입력을 취소한다면 return;
             if(departmentEdit.trim() === departmentArray[i].name){                                  // 만약 동일 부서를 입력한다면  
@@ -340,21 +340,19 @@ function editEmployeeList(numberL){  console.log('=== editEmployeeList exe ===' 
         
         
         if(listArray[i].numberL === numberL){                       // numberL 매개변수와 listArray[i].numberL이랑 같다면
-            const employeeE =prompt("변경할 이름을 입력하세요.");   // prompt 실행
+            const employeeE =prompt( "변경할 이름을 입력하세요." , eL.name );   // prompt 실행 prompt(A , B)
             if (employeeE === null) return;                         // 취소했으면 종료     
             if(employeeE.trim() == ''){ alert('변경할 이름을 입력하십시오.'); return editEmployeeList(numberL);}         // 입력이 null이면 return editEmployeeList 함수 다시 실행;  .trim()은 공백을 없애줌
             if(employeeE.trim() === eL.name){                                                   // 만약 동일 사람를 입력한다면  
-                alert('현재 등록된 이름입니다.');                                                 // 이미 사용중인 이름이라고 알림
-                return editEmployeeList(numberL);                                                     // 다시 함수 실행
+                if(!confirm('현재 등록된 이름입니다. 계속 수정하시겠습니까?')){return editEmployeeList(numberL);};                                                 // 이미 사용중인 이름이라고 알려주고 수정 안하면 함수 재호출
             }
-            const rankE = prompt("변경할 직급을 입력하세요.");      // prompt 실행  
+            const rankE = prompt( "변경할 직급을 입력하세요." , rL.name );      // prompt 실행  prompt(A , B)
             if (rankE === null) return;                             // 취소했으면 종료
             if(rankE.trim() == ''){ alert('변경할 직급을 입력하십시오.'); return editEmployeeList(numberL);}         // 입력이 null이면 return editEmployeeList 함수 다시 실행;  .trim()은 공백을 없애줌
 
             if(rankE.trim()=== rL.name){
-                alert('현재 등록된 직급입니다.');                                                 // 이미 사용중인 직급이라고 알림
-                return editEmployeeList(numberL);                                                     // 다시 함수 실행
-            }
+               if(!confirm('현재 등록된 직급입니다. 계속 수정하시겠습니까?')){return editEmployeeList(numberL);}         // 이미 사용중인 이름이라고 알려주고 수정 안하면 함수 재호출
+            }                                                                                                   
 
             eL.name = employeeE.trim();                                   // prompt 받은 거 eL.name에 넣어주기  trim써서
             rL.name = rankE.trim();                                       // prompt 받은 거 rL.name에 넣어주기 trim써서
