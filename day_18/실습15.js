@@ -220,7 +220,7 @@ function employeeOnclick(){          console.log('--- employeeOnclick exe ---');
     employeeName.value = '';                                               // 입력 후 value값 초기화
     employeeRank.value = '';                                               // 입력 후 value값 초기화
     categoryInput.value = '';                                              // 입력 후 value값 초기화
-    
+    employeeImg.value = '';                                                // 입력 후 img value값 초기화^^^^^^^^^^^!!!!
     employeeList ();                                                        // 푸시한 후 사원목록 렌더링
     employeeSelector();                                                      // 휴가 명단 사원option도 최신화 employeeSelector()
 
