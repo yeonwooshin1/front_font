@@ -306,7 +306,7 @@ function deleteEmployeeList(numberL) {  console.log('=== deleteEmployeeList exe 
             vacationArray.splice(l, 1);                                                        // 같다면 지움
           } // if end
         } // for l end                                                                         // 있을 때까지 반복문, 이러면 다 지워짐
-        alert(`'${count}건'의 휴가 기록을 삭제했습니다.`);                                        // 다 삭제 됐다고 하고 count만큼 지워졌다고 함. 삭제 안하면 삭제된 사원이라고 뜰거임 이유는 397줄 참고
+        alert(`'${count}건'의 휴가 기록을 삭제했습니다.`);                                        // 다 삭제 됐다고 하고 count만큼 지워졌다고 함. 삭제 안하면 삭제된 사원이라고 뜰거임 이유는 437줄 참고
       } // if end                                                                     
     } // if end
   
