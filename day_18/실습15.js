@@ -137,11 +137,27 @@ function editDepartment(numberD){                           // department 부서
     
     for(let i =0; i< departmentArray.length; i++ ){         // departmentArray 배열을 순회함
         if(departmentArray[i].numberD === numberD){         // departmentArray [i]배열의 numberD랑 매개변수 numberD랑 동일확인
-            const deparmentEdit = prompt(`변경할 부서명을 입력해주십시오 (현재 부서명 : ${departmentArray[i].name})`) // 동일하다면 변경할 입력칸 제공
-            if(deparmentEdit == null){ return;}                                                    // 입력이 null이거나 취소한다면 return;
-            alert(`' ${departmentArray[i].name} '이 ' ${deparmentEdit} '(으)로 변경 되었습니다.`)   // 명쾌한 변경 된 내용 알려줌
+            const departmentEdit = prompt(`변경할 부서명을 입력해주십시오 (현재 부서명 : ${departmentArray[i].name})`) // 동일하다면 변경할 입력칸 제공
+            if(departmentEdit.trim() == ''){ alert('변경할 부서명을 입력하십시오.'); return editDepartment(numberD);}         // 입력이 null이면 return editDapartment 함수 다시 실행;           .trim()은 공백을 없애줌
+            if(departmentEdit == null){ return;}                                                    // 입력을 취소한다면 return;
+            if(departmentEdit.trim() === departmentArray[i].name){                                  // 만약 동일 부서를 입력한다면  
+                alert('현재 사용중인 부서명입니다.');                                                 // 이미 사용중인 부서라고 알림
+                return editDepartment(numberD);                                                     // 다시 함수 실행
+            }
+
+            for(let j = 0; j < departmentArray.length; j++){                                        // departmentArray 배열 순회
+                if (j !== i && departmentArray[j].name === departmentEdit.trim()){                  // j i랑 겹치면 동일한 부서니까 배제하고 departmentArray[j].name 이랑 입력값 trim한 거랑 일치하는지 확인
+                    alert('다른 부서에서 사용 중인 이름입니다.');                                     // 사용중인 이름입니다. ~
+                    return editDepartment(numberD);                                                 // 다시 함수 실행
+                }
+            }
+
             
-            departmentArray[i].name = deparmentEdit;                                              // 그리고 바꿈^^
+            
+            
+            alert(`' ${departmentArray[i].name} '이 ' ${departmentEdit} '(으)로 변경 되었습니다.`)   // 명쾌한 변경 된 내용 알려줌
+            
+            departmentArray[i].name = departmentEdit.trim();                                              // 그리고 바꿈^^
             
             break;                                                                                // 나가~ 
         } // if end
@@ -326,12 +342,22 @@ function editEmployeeList(numberL){  console.log('=== editEmployeeList exe ===' 
         if(listArray[i].numberL === numberL){                       // numberL 매개변수와 listArray[i].numberL이랑 같다면
             const employeeE =prompt("변경할 이름을 입력하세요.");   // prompt 실행
             if (employeeE === null) return;                         // 취소했으면 종료     
-
-            
+            if(employeeE.trim() == ''){ alert('변경할 이름을 입력하십시오.'); return editEmployeeList(numberL);}         // 입력이 null이면 return editEmployeeList 함수 다시 실행;  .trim()은 공백을 없애줌
+            if(employeeE.trim() === eL.name){                                                   // 만약 동일 사람를 입력한다면  
+                alert('현재 등록된 이름입니다.');                                                 // 이미 사용중인 이름이라고 알림
+                return editEmployeeList(numberL);                                                     // 다시 함수 실행
+            }
             const rankE = prompt("변경할 직급을 입력하세요.");      // prompt 실행  
             if (rankE === null) return;                             // 취소했으면 종료
-            eL.name = employeeE;                                   // prompt 받은 거 eL.name에 넣어주기
-            rL.name = rankE;                                       // prompt 받은 거 rL.name에 넣어주기
+            if(rankE.trim() == ''){ alert('변경할 직급을 입력하십시오.'); return editEmployeeList(numberL);}         // 입력이 null이면 return editEmployeeList 함수 다시 실행;  .trim()은 공백을 없애줌
+
+            if(rankE.trim()=== rL.name){
+                alert('현재 등록된 직급입니다.');                                                 // 이미 사용중인 직급이라고 알림
+                return editEmployeeList(numberL);                                                     // 다시 함수 실행
+            }
+
+            eL.name = employeeE.trim();                                   // prompt 받은 거 eL.name에 넣어주기  trim써서
+            rL.name = rankE.trim();                                       // prompt 받은 거 rL.name에 넣어주기 trim써서
             alert("사원 정보가 변경되었습니다.");                   // 알림주기
             employeeList ();                                       // 부서 리스트 최신화
             employeeSelector();                                     // 사원 목록도 렌더링
