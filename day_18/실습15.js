@@ -198,7 +198,7 @@ function employeeOnclick(){          console.log('--- employeeOnclick exe ---');
     const imageUrl = Img ? URL.createObjectURL(Img) : 'https://placehold.co/100x100'; // imageUrl이 있다면 고르고 없다면 기본 placehold 사진 사용
     const category = Number(categoryInput.value);                                     // category value랑 departmentArray.NumberD랑 같은 거임 Number()사용
 
-    if(name === '' || rank ==='' || category === '' ){                                // * 유효성 검사하기 name , rank , category 가 없다면 알람 뜨게 한 후 return;                
+    if(name === '' || rank ==='' || category === 0 ){                                // * 유효성 검사하기 name , rank , category 가 없다면 알람 뜨게 한 후 return;                
         alert(' 비어있는 항목이 있습니다.');                                      
         return;
     } 
