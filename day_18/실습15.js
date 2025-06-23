@@ -50,7 +50,7 @@ function departmentOnclick(){          console.log('--- departmentOnclick exe --
 
     // (2) 입력 마크업객체 에서 입력값 가져오기 
 
-    const department = departmentSearch.value;                              // 부서 value 간소화
+    const department = departmentSearch.value.trim();                              // 부서 value 간소화
     // * 유효성 검사하기
     if(department === ''){                                                 // 부서명이 없을 때 함수 return
         alert('부서명을 입력해주세요.');                                      
