@@ -44,7 +44,7 @@ function checkStatus(){
 
     for(let i = 0 ; i < waitingList.length ; i++){
         if(waitingList[i].phone == phoneNumberB.value){
-            alert(`고객님의 대기번호는 ${waitingList[i].no}번 입니다.`);
+            alert(`'${waitingList[i].name}' 고객님의 대기번호는 ${waitingList[i].no}번 입니다.`);
             phoneNumberB.value = '';
             return;
         }
