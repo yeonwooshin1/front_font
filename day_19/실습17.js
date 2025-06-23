@@ -33,7 +33,7 @@ function addWaiting(){
 
 function checkStatus(){
     const phoneNumberB = document.querySelector('.phoneNumberB');
-    
+    if( phoneNumberB.value == ''){ alert('내용을 입력하십시오.'); return;}
     let waitingList = localStorage.getItem('waitingList');
     if(waitingList == null){
         waitingList = [];
