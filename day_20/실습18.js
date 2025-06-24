@@ -276,7 +276,7 @@ function showProductList(){
 
 
 
-function shoppingCart(pno){                                                            // 제품 제거 함수
+function shoppingCart(pno){                                                           
     let productList = localStorage.getItem('productList');
 
     if(productList == null){                                                            // productlist가 없다면
