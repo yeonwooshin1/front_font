@@ -1,7 +1,7 @@
 productAddList();
 productSelect();
 stockInputList();
-
+orderSellerList();
 
 /*전체 제품 조회 (View All Products)
 기능: 현재 등록된 모든 제품 목록을 표 형태로 조회.
@@ -259,5 +259,35 @@ function pCorrection(sno){                                                      
 }// func end
 
 function orderSellerList (){
+    const orList = document.querySelector('#orList');
+    const orderList = JSON.parse( localStorage.getItem('orderList') || '[]') ;
+    html = '';
+    for(let i =0; i < orderList.length ; i++){
+        let orList = orderList[i] ;
+        html += `<tr>
+                    <td> ${orList.orderno} </td> 
+                    <td> ${orList.orderedAt} </td> 
+                    <td> 대기중  
+                        <select id="categoryId">
+                            <option value="" disabled selected > 주문 상태를 선택하세요. </option>
+                            <option value="1"> 대기 중 </option>   <option value="2"> 처리 중 </option><option value="3"> 완료</option><option value="4"> 취소 </option>
+                        </select> 
+                    </td> 
+                    <td> 1 <button onclick = "stockReasonBtn(${orList.orderno})"> 주문상세보기 </button></td>
+                </tr>`;
+    }
+    orList.innerHTML = html;
+    return;
+}
+
+function stockReasonBtn(orderno){ console.log('============stockReasonBtn======');
     
+    const orderList = JSON.parse( localStorage.getItem('orderList') || '[]') ;
+    for(let i =0; i< orderList.length ; i++){
+        let orList = orderList[i] ;
+        if(orList.orderno == orderno){
+            alert( `주문번호 : ${orList.orderno} , 제품명 : ${orList.items[0].pName} `);
+            return;
+        }
+    }
 }

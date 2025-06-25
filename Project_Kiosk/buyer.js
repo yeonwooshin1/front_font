@@ -182,6 +182,7 @@ function buyCartList(){                                                         
 
     alert(`주문이 완료되었습니다! (주문번호 ${orderno})`);
     renderCart();                                                                           // 장바구니 테이블 초기화
-    totalPrice();                                                                           // 총금액 0원 표시
+    totalPrice();
+    orderSellerList ();                                                                           // 총금액 0원 표시
 }
 
