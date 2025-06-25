@@ -51,9 +51,24 @@ function productAdd(){ console.log('productAdd');       // 1. 제품 등록함�
 
     // value값 가져온거 객체화 하기
     if( name == '' || pay == '' || area == '' ){                            // value값 가져온거 객체화 하기
-        alert('항목을 모두 입력해주십시오');                          // 유효성 검사 : name, pay, area가 공백이라면 제품 등록에 실패 알림창 띄우기
-        return;
+        alert('항목을 모두 입력해주십시오');                                  // 유효성 검사 : name, pay, area가 공백이라면 제품 등록에 실패 알림창 띄우기
+        return;                                                             // 함수 종료
     }
+    
+    let inputQuestion = false;                                              // inputQuestion 일단 false로 지정
+    
+    for(let i =0; i < productList.length; i++){                             // productList 배열 순회
+        if(productList[i].pName == name ){                                  // 제품 안에 있는 pName과 value값이랑 일치하면
+            if(!confirm('제품 목록에 있는 제품명과 일치합니다. 등록하시겠습니까?')){ alert(' 제품 등록을 취소하였습니다. ');   return; }        // 있다고 등록하냐고 물어보기
+            inputQuestion = true;                                           // inputQuestion = true;
+        }
+
+    }
+    if(inputQuestion === false){                                            // 질문이 없었다면? == 즉 일치하는 제품명을 입력하지 않았다면? 
+        if(!confirm('해당 제품을 등록하시겠습니까?')){ alert(' 제품 등록을 취소하였습니다. ');   return; }  // 해당 제품 등록하냐고 물어보기
+    }
+
+
     // 객체 obj생성
     const obj = { pno , pName : name , pPrice : Number(pay) , pDetails : area , pImg : img }    // obj 객체에 value값 넣기
     // 객체화한거 배열에 추가
@@ -64,6 +79,13 @@ function productAdd(){ console.log('productAdd');       // 1. 제품 등록함�
     localStorage.setItem('lastPno', String(lastPno));                                           // lastPno 저장 
     
     alert('제품이 등록되었습니다.');                                                      // 성공 표시
+
+    nameInput.value = '';                                                               // value값 초기화
+    payInput.value = '';                                                                // value값 초기화
+    areaInput.value = '';                                                              // value값 초기화
+    imgInput.value = '';                                                                // value값 초기화
+
+    
     productAddList();                                                                   // 제품 표시줄 렌더링
     productSelect ();                                                                   // 제품 드롭다운 렌더링
     
@@ -140,11 +162,15 @@ const ss = String(now.getSeconds()).padStart(2,'0'); // 07
 const stamp = `${y}-${m}-${d} ${hh}:${mm}:${ss}`;
 console.log(stamp);   // "2025-06-26 15:14:07" */
 
-let nowdate = new Date();                                                               // new Date() 변수 선언
-let year = nowdate.getFullYear();                                                       // 날짜 ~
-let month = nowdate.getMonth() + 1;
-let date = nowdate.getDate();
-let now = `${year}-${month}-${date}`;                                                   // ~ 만드는중
+const now = new Date();
+const y  = now.getFullYear();
+const m  = String(now.getMonth() + 1).padStart(2, '0');
+const d  = String(now.getDate()).padStart(2, '0');
+const hh = String(now.getHours()).padStart(2, '0');
+const mm = String(now.getMinutes()).padStart(2, '0');
+const ss = String(now.getSeconds()).padStart(2, '0');
+const stamp = `${y}-${m}-${d} ${hh}:${mm}:${ss}`;
+
 
 
 function stockIn(){
@@ -172,7 +198,7 @@ function stockIn(){
 
     // value값 가져온거 객체화하기
 
-    const obj1 = { sno : sno, pno : pid , comingInOut : cid ,amount : Number(amount) , reason : reason , sdate : now };  // obj1 객체에 value값 넣기
+    const obj1 = { sno : sno, pno : pid , comingInOut : cid ,amount : Number(amount) , reason : reason , sdate : stamp };  // obj1 객체에 value값 넣기
     stockList.push(obj1);                                                                                                // 그거 stockList에 푸시
 
     localStorage.setItem( 'stockList', JSON.stringify(stockList) );                 // localStorage에 stockList 최신화 JSON.stringify
