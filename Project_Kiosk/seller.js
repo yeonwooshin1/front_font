@@ -47,7 +47,7 @@ function productAdd(){ console.log('productAdd');       // 1. 제품 등록함�
     let productList = JSON.parse(localStorage.getItem('productList') || '[]');  // productList JSON.parse해서 호출하기 || 없다면 '[]' 배열추가 
                                          
     let lastPno = Number(localStorage.getItem('lastPno') || 0);                 // lastPno localStorage에서 호출하기 || 없다면 0으로 선언
-    const pno = ++lastPno
+    const pno = ++lastPno                                                       // pno 증감은 lastPno에서 가져옴
 
     // value값 가져온거 객체화 하기
     if( name == '' || pay == '' || area == '' ){                            // value값 가져온거 객체화 하기
@@ -257,3 +257,7 @@ function pCorrection(sno){                                                      
     stockInputList ();                                                                 // 재고 리스트 렌더링
     return;                                                                            // 함수종료
 }// func end
+
+function orderSellerList (){
+    
+}
