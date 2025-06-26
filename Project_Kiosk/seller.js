@@ -297,11 +297,3 @@ function stockReasonBtn(orderno){ console.log('========stockReasonBtn======');
         }
     }
 }
-
-function orderProcessing (){
-    const orderName = document.querySelector('#orderName')
-    const categoryId = document.querySelector('#categoryId');
-
-    orderName.innerHTML = categoryId.value;
-
-}
