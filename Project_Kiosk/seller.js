@@ -303,6 +303,5 @@ function orderProcessing (){
     const categoryId = document.querySelector('#categoryId');
 
     orderName.innerHTML = categoryId.value;
-    orderSellerList ();
 
 }
