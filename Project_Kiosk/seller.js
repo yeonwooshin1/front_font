@@ -280,14 +280,21 @@ function orderSellerList (){
     return;
 }
 
-function stockReasonBtn(orderno){ console.log('============stockReasonBtn======');
+function stockReasonBtn(orderno){ console.log('========stockReasonBtn======');
     
     const orderList = JSON.parse( localStorage.getItem('orderList') || '[]') ;
+    
     for(let i =0; i< orderList.length ; i++){
-        let orList = orderList[i] ;
+        const orList = orderList[i] ;   console.log('======orList======');
+        
         if(orList.orderno == orderno){
-            alert( `주문번호 : ${orList.orderno} , 제품명 : ${orList.items[0].pName} `);
-            return;
+            let itemList = `-- 주문번호 : ${orList.orderno} \n--- 제품리스트 ---`;
+            for(let j =0; j < orList.items.length; j++){
+                const item = orList.items[j];
+                itemList += `\n제품명 : ${item.pName}    가격 : ${item.pPrice}원      수량 : ${item.amount}개`;
+            }
+            alert( itemList );
         }
     }
 }
+
